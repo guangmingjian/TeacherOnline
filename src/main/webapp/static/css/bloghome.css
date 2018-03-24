@@ -1,0 +1,106 @@
+body{
+	background: url(../images/login_bgx.gif);
+	 font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+a{
+	text-decoration: none;
+}
+.navbar-nav a{
+	margin: auto 10px;
+}
+nav{
+	margin-bottom: 20px;
+}
+
+
+.main-header {
+	background-image: url(../images/bloghead.jpg);
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-repeat: no-repeat;
+	background-position: center 20%;
+	background-size: cover;
+}
+/*主体部分*/
+#main-body{
+	align-content: center; 
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/*主题左侧*/
+#body-left{
+
+	margin-right: 60px;
+	margin-left: -30px;
+	
+}
+
+
+#article{
+	padding: 20px;
+	background-color: white;
+	margin-top: 20px;
+	margin-bottom: 80px;
+}
+.post-footer {
+  margin-top: 30px;
+  border-top: 1px solid #ebebeb;
+  padding: 21px 0 0;
+  font-size: small;
+}
+.post-footer a{
+	text-decoration: none;
+	margin-left: 5px;
+}
+.post-footer i{
+	margin-left: 5px;
+}
+#article p {
+	font-size: 20px;
+	margin: 20px auto;
+}
+
+/*主体右侧*/
+
+#body-right
+{
+	margin-top: 20px;
+	
+	
+}
+.widget{
+	padding: 20px 40px;
+	text-align: left;
+	width: 100%;
+	background-color: white;
+}
+.widget .community{
+	border-top: 2px solid #ebebeb;
+	padding-top: 10px;
+	
+}
+
+.widget .community  a{
+	color: #e67e22;
+}
+.widget .community  .fa{
+	margin: auto 10px;
+}
+.widget .tag-cloud a {
+  border: 1px solid #ebebeb;
+  padding: 2px 7px;
+  color: #959595;
+  line-height: 1.5em;
+  display: inline-block;
+  margin: 0 7px 7px 0;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.widget .tag-cloud a:hover {
+  color: #ffffff;
+  background: #e67e22;
+  border: 1px solid #e67e22;
+  text-decoration: none;
+}
