@@ -20,6 +20,8 @@
 		<link href="static/css/signin.css" rel="stylesheet">
 		<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+        <script src="static/js/jquery-3.2.1.js" type="text/javascript"></script>
+        <script src="static/js/log.js" type="text/javascript"></script>
 	</head>
 
 	<body class="text-center">
@@ -27,7 +29,7 @@
 			<img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
 			<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 			<label for="inputEmail" class="sr-only">Email address</label>
-			<input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+			<input  type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
 			<label for="inputPassword" class="sr-only">Password</label>
 			<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
 			<div class="checkbox mb-3">
