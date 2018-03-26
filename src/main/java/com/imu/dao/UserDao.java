@@ -8,4 +8,5 @@ public interface UserDao {
     //注意多个参数时需要注解进行参数对应
     public User getUserByEmPa(@Param("uEmail") String uEmail, @Param("uPassword") String uPassword);
     public User getUserByEmail(String uEmail);
+    public int addUser(User user);
 }

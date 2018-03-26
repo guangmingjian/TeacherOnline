@@ -6,14 +6,19 @@ import com.imu.service.UserService;
 import com.imu.tools.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 @Controller
+@SessionAttributes("user")
 @RequestMapping(value = "/user")
 public class UserController {
 
@@ -42,9 +47,32 @@ public class UserController {
      * 注册功能
      */
     @RequestMapping(value = "/doReg",method = RequestMethod.POST)
-    public String doReg(){
-
-        return "";
+    public String doReg(HttpServletRequest request, HttpServletResponse response,ModelMap map){
+        //构造user对象
+        User user = new User();
+        user.setuEmail(request.getParameter("userid"));
+        user.setuPassword(request.getParameter("password"));
+        user.setuName(request.getParameter("username"));
+        user.setuTel(request.getParameter("tel"));
+        user.setuAge(request.getParameter("age"));
+        //插入数据库中
+        if(userService.doReg(user)){
+            //将user注入session中
+            map.addAttribute("user",user);
+            System.out.println("..........注册插入成功..........");
+            try {
+                PrintWriter out = response.getWriter();
+                out.print("<script>alert('regist successful!...'); window.location='/index' </script>");
+                out.flush();
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return "first_index";
+//            return "redirect:WEB-INF/pages/first_index.jsp";
+        }else{
+            return "reg";
+        }
     }
     /*
     * 检验用户名是否存在**/

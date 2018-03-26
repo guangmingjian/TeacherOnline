@@ -24,7 +24,7 @@
 	
   </head>
   
-  <body style="background: url(static/images/login_bgx.gif);">
+  <body >
   <div class="top form-group" style="margin-top:8px"> <!--头部布局-->
 		 <ul class="list-inline top_list text-right"  style="padding-right: 10px;" >
               <li > <a href="/index"> <span class="glyphicon glyphicon-home" style="color: #333;">首页 </span></a></li>
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="col-lg-8 col-lg-offset-2">
-                    <form id="defaultForm" method="post" action="#" class="form-horizontal">
+                    <form id="defaultForm" method="post" action="/user/doReg" class="form-horizontal">
                         <fieldset>
                             <legend>注册信息</legend>
 

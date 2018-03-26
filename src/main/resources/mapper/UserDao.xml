@@ -13,4 +13,8 @@
     <select id="getUserByEmail" resultType="User">
         SELECT *FROM user WHERE u_email = #{uEmail};
     </select>
+    <insert id="addUser" parameterType="User">
+        insert into user (u_Email,u_Password,u_Name,u_Tel,u_Age)
+        values (#{uEmail},#{uPassword},#{uName},#{uTel},#{uAge})
+    </insert>
 </mapper>

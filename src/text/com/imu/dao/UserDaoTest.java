@@ -23,4 +23,11 @@ public class UserDaoTest {
     public void getUserByEmPa() {
       System.out.println(  userDao.getUserByEmPa("1106697389@qq.com","123456").toString());
     }
+
+    @Test
+    public void addUser() {
+        User user = new User("110669@qq.com","123456",
+                "张三","15690993629","18");
+       System.out.println( userDao.addUser(user));
+    }
 }

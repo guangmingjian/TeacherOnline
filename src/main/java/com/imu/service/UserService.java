@@ -12,5 +12,6 @@ public interface UserService {
      * 如果无此用户则该对象为空*/
     public User doLogin(String email,String password);
     public User isEmail(String email);
+    public boolean doReg(User user);
 
 }

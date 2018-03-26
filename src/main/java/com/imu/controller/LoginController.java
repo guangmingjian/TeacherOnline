@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -22,7 +23,7 @@ public class LoginController {
      *
      */
     @RequestMapping(value = "/dolog",method = RequestMethod.POST)
-    public String doLogin(HttpServletRequest request, HttpServletResponse response, ModelMap modelMap){
+    public String doLogin(HttpSession session, HttpServletRequest request, HttpServletResponse response, ModelMap modelMap){
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         User user = userService.doLogin(email,password);
@@ -30,6 +31,7 @@ public class LoginController {
 
         if(user == null)
         {
+            System.out.println("***************session*********** null");
             try {
                 PrintWriter out = response.getWriter();
                 out.print("<script>alert('email or password is error...'); window.location='/login' </script>");
@@ -41,7 +43,12 @@ public class LoginController {
             return "login";
         }
         else
-            return "first_index";
+        {
+           session.setAttribute("sess_user",user);
+           System.out.println("***************session********  "+ user.getuName());
+            return "redirect:/index";
+        }
+
     }
 
 }

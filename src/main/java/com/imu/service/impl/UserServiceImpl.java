@@ -25,4 +25,10 @@ public class UserServiceImpl implements UserService{
         return userDao.getUserByEmail(email);
     }
 
+    public boolean doReg(User user) {
+        if(userDao.addUser(user)>0)
+            return true;
+        return false;
+    }
+
 }
