@@ -74,9 +74,9 @@ public class LoginFilter implements Filter {
      * */
     public void init(FilterConfig arg0) throws ServletException {
         pattenURL.add("/login");//登录jsp
-        pattenURL.add("/dolog");//登录jsp
-        pattenURL.add("/reg");//登录方法
-        pattenURL.add("/index");//发送验证码方法
+        pattenURL.add("/dolog");//处理登录逻辑
+        pattenURL.add("/reg");//注册方法
+        pattenURL.add("/index");//首页
         pattenURL.add("css");//css
         pattenURL.add("image");//image
         pattenURL.add("js");//js

@@ -42,13 +42,11 @@ public class LoginController {
             }
             return "login";
         }
-        else
-        {
-           session.setAttribute("sess_user",user);
-           System.out.println("***************session********  "+ user.getuName());
+        else {
+            session.setAttribute("sess_user", user);
+            System.out.println("***************session********  " + user.getuName());
             return "redirect:/index";
         }
-
     }
 
 }
