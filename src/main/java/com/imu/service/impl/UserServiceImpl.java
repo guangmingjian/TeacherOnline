@@ -19,4 +19,10 @@ public class UserServiceImpl implements UserService{
     public User doLogin(String email, String password) {
         return userDao.getUserByEmPa(email,password);
     }
+
+    public User isEmail(String email) {
+
+        return userDao.getUserByEmail(email);
+    }
+
 }

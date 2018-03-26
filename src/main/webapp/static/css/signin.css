@@ -50,4 +50,10 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+#input-tip{
+    margin: 10px auto;
+    color: red;
+    font-size: 14px;
+}
+
 

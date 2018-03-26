@@ -1,5 +1,10 @@
 package com.imu.controller;
 
+import com.google.gson.Gson;
+import com.imu.entity.User;
+import com.imu.service.UserService;
+import com.imu.tools.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,15 +14,53 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
+@RequestMapping(value = "/user")
 public class UserController {
 
+    @Autowired
+    UserService userService;
+    Gson gson = new Gson();
     @RequestMapping(value = "/UserExist",method = RequestMethod.POST)
     @ResponseBody
     public String  UserExist(String email, HttpServletRequest request, HttpServletResponse response){
         //获取前端htmlco对象的值
 
         System.out.println("email:"+ email);
-        //设置相应的字符集
-        return "{}";
+        User user = userService.isEmail(email);
+        if(user == null)
+        {
+            System.out.println("user : null");
+            return "{\"email\":0}";
+        }
+        else {
+            System.out.println("user:存在");
+            return "{\"email\":1}";
+        }
+
+    }
+    /**
+     * 注册功能
+     */
+    @RequestMapping(value = "/doReg",method = RequestMethod.POST)
+    public String doReg(){
+
+        return "";
+    }
+    /*
+    * 检验用户名是否存在**/
+    @RequestMapping(value = "/vaildUser",method = RequestMethod.POST)
+    public  @ResponseBody String vaildUser(String userid){
+        System.out.println("userid :"  + userid);
+        Valid valid = new Valid();
+        if(userService.isEmail(userid)==null){
+            //邮箱不存在 可以注册 返回true
+            valid.setValid(true);
+        }
+        else {
+            System.out.println("该邮箱已经存在");
+            valid.setValid(false);
+        }
+        //返回json格式的数据
+        return gson.toJson(valid);
     }
 }

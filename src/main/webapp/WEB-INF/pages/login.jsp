@@ -30,7 +30,7 @@
 			<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 			<label for="inputEmail" class="sr-only">Email address</label>
 			<input  type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-			<div id="input-tip" class="">
+			<div id="input-tip" class=".text-danger">
 
 			</div>
 			<label for="inputPassword" class="sr-only">Password</label>
@@ -40,7 +40,7 @@
           <input type="checkbox" value="记住"> Remember me
         </label>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+			<button id="sub" class="disabled btn btn-lg btn-primary btn-block" type="submit">登录</button>
 			<br />
 			<div class="forgot login-footer">
 				<span style="font-family: '楷体';">无账号?

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 @Controller
 public class LoginController {
@@ -24,8 +26,20 @@ public class LoginController {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         User user = userService.doLogin(email,password);
+        response.setCharacterEncoding("utf-8");
+
         if(user == null)
+        {
+            try {
+                PrintWriter out = response.getWriter();
+                out.print("<script>alert('email or password is error...'); window.location='/login' </script>");
+                out.flush();
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             return "login";
+        }
         else
             return "first_index";
     }

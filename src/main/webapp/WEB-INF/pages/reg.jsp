@@ -85,17 +85,17 @@
                         <fieldset>
                             <legend>基本信息填写</legend>
                             
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">身份：</label>
-                                <div class="col-lg-5">
-                                    <select class="form-control" name="status">
-                           
-                                        <option value="fr">教师</option>
-                                        <option value="de">学生</option>
-                                        
-                                    </select>
-                                </div>
-                            </div>
+                            <%--<div class="form-group">--%>
+                                <%--<label class="col-lg-3 control-label">身份：</label>--%>
+                                <%--<div class="col-lg-5">--%>
+                                    <%--<select class="form-control" name="status">--%>
+                           <%----%>
+                                        <%--<option value="fr">教师</option>--%>
+                                        <%--<option value="de">学生</option>--%>
+                                        <%----%>
+                                    <%--</select>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
                              <div class="form-group">
                                 <label class="col-lg-3 control-label">姓名：</label>
                                 <div class="col-lg-5">
@@ -154,18 +154,17 @@
 							message: '请输入正确的邮箱地址'
 						},
 
-//						remote: {
-//							url: "UserAjaxSer", //UserAjaxSer
-//							type: "Post",
-//							message: "用户名已存在",
-//
-//							data: {
-//								userid: function() {
-//									return $("#userName").val();
-//								},
-//
-//							}
-//						}
+						remote: {
+							url: "user/vaildUser", //UserAjaxSer
+							type: "Post",
+							message: "用户名已存在",
+							data: {
+								userid: function() {
+									return $("#userName").val();
+								},
+
+							}
+						}
 
 					}
 				},

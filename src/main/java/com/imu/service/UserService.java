@@ -11,4 +11,6 @@ public interface UserService {
      * @return 返回查询的user实体
      * 如果无此用户则该对象为空*/
     public User doLogin(String email,String password);
+    public User isEmail(String email);
+
 }

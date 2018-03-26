@@ -10,4 +10,7 @@
         SELECT *FROM user WHERE u_email = #{uEmail} AND u_password
         = #{uPassword};
     </select>
+    <select id="getUserByEmail" resultType="User">
+        SELECT *FROM user WHERE u_email = #{uEmail};
+    </select>
 </mapper>
