@@ -1,7 +1,5 @@
 package com.imu.entity;
 
-import java.util.Date;
-
 public class Article {
     int artId;
     int artCateid;
@@ -10,7 +8,9 @@ public class Article {
     String artContent;
     String artHtml;
     String artSummary;
-    Date artDate;
+    String artDate;
+    Category category;
+    User user;
 
     public Article() {
     }
@@ -20,7 +20,7 @@ public class Article {
         this.uId = uId;
     }
 
-    public Article(int artCateid,int uId, String artTitle, String artContent, String artHtml, String artSummary, Date artDate) {
+    public Article(int artCateid,int uId, String artTitle, String artContent, String artHtml, String artSummary, String artDate) {
         this.artCateid = artCateid;
         this.uId = uId;
         this.artTitle = artTitle;
@@ -30,7 +30,7 @@ public class Article {
         this.artDate = artDate;
     }
 
-    public Article(int artId, int artCateid, int uId, String artTitle, String artContent, String artHtml, String artSummary, Date artDate) {
+    public Article(int artId, int artCateid, int uId, String artTitle, String artContent, String artHtml, String artSummary, String artDate) {
         this.artId = artId;
         this.artCateid = artCateid;
         this.uId = uId;
@@ -39,6 +39,22 @@ public class Article {
         this.artHtml = artHtml;
         this.artSummary = artSummary;
         this.artDate = artDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "artId=" + artId +
+                ", artCateid=" + artCateid +
+                ", uId=" + uId +
+                ", artTitle='" + artTitle + '\'' +
+                ", artContent='" + artContent + '\'' +
+                ", artHtml='" + artHtml + '\'' +
+                ", artSummary='" + artSummary + '\'' +
+                ", artDate=" + artDate +
+                ", category=" + category +
+                ", user=" + user +
+                '}';
     }
 
     public int getArtId() {
@@ -97,25 +113,28 @@ public class Article {
         this.artSummary = artSummary;
     }
 
-    public Date getArtDate() {
+    public String getArtDate() {
         return artDate;
     }
 
-    public void setArtDate(Date artDate) {
+    public void setArtDate(String artDate) {
         this.artDate = artDate;
     }
 
-    @Override
-    public String toString() {
-        return "Article{" +
-                "artId=" + artId +
-                ", artCateid=" + artCateid +
-                ", uId=" + uId +
-                ", artTitle='" + artTitle + '\'' +
-                ", artContent='" + artContent + '\'' +
-                ", artHtml='" + artHtml + '\'' +
-                ", artSummary='" + artSummary + '\'' +
-                ", artDate='" + artDate + '\'' +
-                '}';
+    public Category getCategory() {
+        return category;
     }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 }

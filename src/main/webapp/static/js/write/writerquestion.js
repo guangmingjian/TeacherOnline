@@ -79,24 +79,35 @@ function sub_form() {
     var htmlco = $("#editormdhtml").val();
     // alert(htmlco);
     var searchUrl;
-    $.ajax({
-        data: {
-            'html':testEditor.getHTML(),
-            'md': testEditor.getMarkdown(),
-			'title':$('#art-title').val(),
-            'summary':$('#art-title').val(),
-            'cata':$('#cata').val()
-        },
-        dataType: 'text',
-        success: function(data) {
-            alert(data);
-            searchUrl = encodeURI("/show?htmltext=" +
-                data);
-            location.href = "/blog";
-            //  alert(searchUrl);
-            //window.location.href = searchUrl;
-        },
-        type: 'post',
-        url: '/TextSvl'
-    })
+	if ($('#art-title').val().trim()==''){
+		alert('请输入标题！');
+		return false;
+	}
+    if ($('#summary').val().trim()==''){
+        alert('请输入文章概括！');
+        return false ;
+    }
+
+        $.ajax({
+            data: {
+                'html':testEditor.getHTML(),
+                'md': testEditor.getMarkdown(),
+                'title':$('#art-title').val(),
+                'summary':$('#summary').val(),
+                'cata':$('#cata').val()
+            },
+            dataType: 'text',
+            success: function(data) {
+                alert(data);
+                searchUrl = encodeURI("/show?htmltext=" +
+                    data);
+                location.href = "/blog";
+                //  alert(searchUrl);
+                //window.location.href = searchUrl;
+            },
+            type: 'post',
+            url: '/TextSvl'
+        })
+
+
 }

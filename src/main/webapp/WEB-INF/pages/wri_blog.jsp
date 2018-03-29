@@ -105,7 +105,7 @@
 
 								</div>
 								<span class="input-group-text" id="basic-addon1">概括</span>
-								<textarea id="summary" type="text" class="form-control" placeholder="内容概括 :  最多50字" maxlength="50"></textarea>
+								<textarea id="summary" type="text" class="form-control" placeholder="内容概括 :  最多150字" maxlength="150"></textarea>
 							</div>
 							<div class="btns" class="my-2">
 								<button id="show-btn">显示</button>

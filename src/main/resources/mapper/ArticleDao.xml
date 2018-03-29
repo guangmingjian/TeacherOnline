@@ -2,17 +2,48 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 使用MyBatis的API方式进行实现 -->
-<mapper namespace="com.imu.dao.CategoryDao">
-    <select id="getCateByUId" resultType="Category">
-        SELECT * FROM Category WHERE  u_id=#{uId} ;
-    </select>
-    <select id="getCateByNameID" resultType="Category">
-        SELECT * FROM Category WHERE  u_id=#{uId} AND cata_name=#{cataName} ;
-    </select>
+
+<mapper namespace="com.imu.dao.ArticleDao">
     <insert id="addArticle" parameterType="Article">
-        insert into Article (u_Id,art_Title,art_Content,
-        art_Html,art_Summary,art_Date)
-        values (#{uId},#{artTitle},#{artContent},#{artHtml},#{artSummary},#{artDate});
+        insert into Article (art_cateid,u_id,art_title,art_content,art_html,art_summary,art_date)
+        values (#{artCateid},#{uId},#{artTitle},#{artContent},#{artHtml},#{artSummary},#{artDate});
     </insert>
+    <select id="queryArticleByDesc" resultType="Article">
+        SELECT * FROM `article`  order by `art_id` desc;
+    </select>
+    <resultMap id="articleResult" type="com.imu.entity.Article">
+        <id property="artId" column="art_id" />
+        <result property="artCateid" column="art_cateid"/>
+        <result property="uId" column="u_id"/>
+        <result property="artTitle" column="art_title"/>
+        <result property="artContent" column="art_content"/>
+        <result property="artHtml" column="art_html"/>
+        <result property="artSummary" column="art_summary"/>
+        <result property="artDate" column="art_date"/>
+        <association property="user" javaType="com.imu.entity.User">
+            <id property="uId" column="u_id"/>
+            <result property="uName" column="u_name"/>
+        </association>
+        <association property="category" javaType="com.imu.entity.Category">
+            <id property="cataId" column="cata_id"/>
+            <result property="cataName" column="cata_name"/>
+        </association>
+    </resultMap>
+
+    <select id="queryDetilsAllArti" resultMap="articleResult">
+        select a.*,b.cata_name,c.u_name
+         from article a ,Category b,user c
+         WHERE a.art_cateid = b.cata_id
+         AND a.u_id = c.u_id
+         order BY  a.art_id DESC
+        ;
+    </select>
+
+    <select id="queryArticleByID" resultMap="articleResult">
+        select a.*,b.cata_name,c.u_name
+        from article a ,Category b,user c
+        WHERE a.art_cateid = b.cata_id
+        AND a.u_id = c.u_id AND a.art_id=#{artId};
+    </select>
 
 </mapper>

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
@@ -33,9 +34,12 @@ public class TextSvlController {
         String title = request.getParameter("title");
         String summary = request.getParameter("summary");
         String cata = request.getParameter("cata");
-        Date time= new java.sql.Date(new java.util.Date().getTime());
+        SimpleDateFormat sdf =   new SimpleDateFormat( " yyyy年MM月dd日 " );
+
+        String time = sdf.format(new Date());
         boolean succ =  articleService.writeArticle(cata,Integer.parseInt(user.getuId()),title,md,html,summary,time);
         System.out.println("****TextSvl:  "+ md +title+summary+cata);
+        System.out.println("******************html*****************\n" + html);
         //设置相应的字符集
         response.setCharacterEncoding("utf-8");
         if (succ){

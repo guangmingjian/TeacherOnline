@@ -1,17 +1,32 @@
 package com.imu.controller;
 
+import com.imu.service.ArticleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class BlogController {
+    @Autowired
+    ArticleService articleService;
 //    博客首页
     @RequestMapping(value = "/blog",method = RequestMethod.GET)
-    public  String blogIndex(){ return "blog_index" ;}
+    public  String blogIndex(ModelMap modelMap){
+        modelMap.addAttribute("articles",articleService.queryDetilsAllArti());
+        return "blog_index" ;
+    }
     //写博客
     @RequestMapping(value = "/wri-blog",method = RequestMethod.GET)
     public  String writeBlog(){ return "wri_blog" ;}
+
+    //写博客
+    @RequestMapping(value = "/blogDetils",method = RequestMethod.GET)
+    public  String blogDetils(String artId,ModelMap modelMap){
+
+        return "wri_blog" ;
+    }
 
 
 }

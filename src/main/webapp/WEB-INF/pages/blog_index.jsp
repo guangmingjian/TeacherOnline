@@ -71,32 +71,33 @@
 		<div class="container" id="main-body">
 			<div class="row">
 				<div class="col-7" id="body-left">
+					<c:forEach items="${articles}" var="article">
 					<div id="article">
-						<h1 class="post-title"><a href="#" style="color: #303030;text-decoration:none;">主题模板和博客支持本地化了！</a></h1>
+						<h1 class="post-title"><a href="#" style="color: #303030;text-decoration:none;">${article.artTitle}</a></h1>
 
 						<div class="post-meta">
-							<span class="author">作者：<a href="/author/wangsai/" style="text-decoration:none;">王赛</a></span> &bull;
-							<time class="post-date" datetime="2018年1月22日星期一下午5点03分" title="2018年1月22日星期一下午5点03分">2018年1月22日</time>
+							<span class="author">作者：<a href="/author/wangsai/" style="text-decoration:none;">${article.user.uName}</a></span> &bull;
+							<time class="post-date" >${article.artDate}</time>
 						</div>
 						<br />
 						<div class="post-content" style="text-align: left;">
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;上周我们 发布 了一个新版本，包含了大家期盼已久的功能：主题模板和网站对本地化的支持。 这个功能完全是由我们的一个贡献者（Juan）开发的，Ghost 基金提供了支持。 我们已经针对这个功能编写了完整的文档，下面就来介绍一下这个功能是如何工作的： 网站本地化 你可以在 Ghos</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;${article.artSummary}</p>
 						</div>
 
 						<div class="post-permalink">
-							<button type="button" class="btn btn-success">阅读原文</button>
+							<a href="/blogDetils?artId=${article.artId}"><button type="button" class="btn btn-success">阅读原文</button></a>
 						</div>
 
 						<footer class="post-footer clearfix">
 							<div class="pull-left tag-list">
 								<i class="fa fa-folder-open-o"></i>
-								<a href="/tag/android/" style="color: #959595;">Android</a>
-								<a href="/tag/ke-hu-duan/" style="color: #959595;">客户端</a>
+								<a href="/tag/android/" style="color: #959595;">${article.category.cataName}</a>
 							</div>
 							<div class="pull-right share">
 							</div>
 						</footer>
 					</div>
+					</c:forEach>
 
 					<div id="article">
 						<h1 class="post-title"><a href="#" style="color: #303030;text-decoration:none;">Android 版 Ghost 客户端来了！</a></h1>
@@ -183,6 +184,7 @@
 					<a href="#">Terms</a>
 				</p>
 			</footer>
+			</div>
 	</body>
 
 </html>
