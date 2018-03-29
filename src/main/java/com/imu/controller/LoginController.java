@@ -27,6 +27,7 @@ public class LoginController {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         User user = userService.doLogin(email,password);
+        System.out.println("**********登录 userid：" + user.getuId());
         response.setCharacterEncoding("utf-8");
 
         if(user == null)

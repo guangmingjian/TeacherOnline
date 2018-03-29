@@ -58,7 +58,8 @@ public class UserController {
         //插入数据库中
         if(userService.doReg(user)){
             //将user注入session中
-            map.addAttribute("user",user);
+            user = userService.isEmail(request.getParameter("userid"));
+;            map.addAttribute("user",user);
             System.out.println("..........注册插入成功..........");
             try {
                 PrintWriter out = response.getWriter();

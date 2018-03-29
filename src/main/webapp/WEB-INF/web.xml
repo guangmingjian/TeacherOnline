@@ -5,13 +5,13 @@
          version="3.0">
   <!-- 在Spring 4.3的特性需要在tomcat 3.0+的容器中运行-->
   <display-name>Archetype Created Web Application</display-name>
-  <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>*.js</url-pattern>
-    <url-pattern>*.css</url-pattern>
-    <url-pattern>/assets/*"</url-pattern>
-    <url-pattern>/images/*</url-pattern>
-  </servlet-mapping>
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>default</servlet-name>-->
+    <!--<url-pattern>*.js</url-pattern>-->
+    <!--<url-pattern>*.css</url-pattern>-->
+    <!--<url-pattern>/assets/*"</url-pattern>-->
+    <!--<url-pattern>/images/*</url-pattern>-->
+  <!--</servlet-mapping>-->
   <!-- 配置Spring MVC的核心控制器DispatcherServlet-->
   <servlet>
     <servlet-name>spring-dispatcher</servlet-name>

@@ -11,7 +11,7 @@ public class BlogController {
     public  String blogIndex(){ return "blog_index" ;}
     //写博客
     @RequestMapping(value = "/wri-blog",method = RequestMethod.GET)
-    public  String writeBlog(){ return "write-blog" ;}
+    public  String writeBlog(){ return "wri_blog" ;}
 
 
 }

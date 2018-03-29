@@ -1,0 +1,18 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 使用MyBatis的API方式进行实现 -->
+<mapper namespace="com.imu.dao.CategoryDao">
+    <select id="getCateByUId" resultType="Category">
+        SELECT * FROM Category WHERE  u_id=#{uId} ;
+    </select>
+    <select id="getCateByNameID" resultType="Category">
+        SELECT * FROM Category WHERE  u_id=#{uId} AND cata_name=#{cataName} ;
+    </select>
+    <insert id="addArticle" parameterType="Article">
+        insert into Article (u_Id,art_Title,art_Content,
+        art_Html,art_Summary,art_Date)
+        values (#{uId},#{artTitle},#{artContent},#{artHtml},#{artSummary},#{artDate});
+    </insert>
+
+</mapper>
