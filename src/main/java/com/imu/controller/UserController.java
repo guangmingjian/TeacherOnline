@@ -14,17 +14,24 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 @Controller
 @SessionAttributes("user")
-@RequestMapping(value = "/user")
 public class UserController {
 
     @Autowired
     UserService userService;
     Gson gson = new Gson();
+
+    //返回个人中心
+    @RequestMapping(value = "/personal",method = RequestMethod.GET)
+    public String  personal(){
+        return "personal";
+    }
+
     @RequestMapping(value = "/UserExist",method = RequestMethod.POST)
     @ResponseBody
     public String  UserExist(String email, HttpServletRequest request, HttpServletResponse response){
@@ -48,6 +55,7 @@ public class UserController {
      */
     @RequestMapping(value = "/doReg",method = RequestMethod.POST)
     public String doReg(HttpServletRequest request, HttpServletResponse response,ModelMap map){
+        System.out.println("***************注册*************");
         //构造user对象
         User user = new User();
         user.setuEmail(request.getParameter("userid"));
@@ -63,7 +71,7 @@ public class UserController {
             System.out.println("..........注册插入成功..........");
             try {
                 PrintWriter out = response.getWriter();
-                out.print("<script>alert('regist successful!...'); window.location='/index' </script>");
+                out.print("<script>alert('regist successful!...'); window.location='/' </script>");
                 out.flush();
                 out.close();
             } catch (IOException e) {
@@ -91,5 +99,26 @@ public class UserController {
         }
         //返回json格式的数据
         return gson.toJson(valid);
+    }
+    @RequestMapping(value = "/updateUser",method = RequestMethod.POST)
+    public String  updateUser(HttpSession session,HttpServletResponse response,User user){
+        System.out.println("**************接受到的user************+\n" + user.toString() );
+        User sess_user= (User) session.getAttribute("sess_user");
+        boolean success =  userService.updateUser(sess_user.getuId(),user);
+        try {
+            PrintWriter out = response.getWriter();
+            if(success){
+                user.setuId(sess_user.getuId());
+                session.setAttribute("sess_user",user);
+                out.print("update successful!...");
+            }else{
+                out.print("update failed!...");
+            }
+            out.flush();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "personal";
     }
 }

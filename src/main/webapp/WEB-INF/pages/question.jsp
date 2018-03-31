@@ -48,7 +48,7 @@
 						<a class="nav-link " href="/blog">写文章</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link " href="#">个人中心</a>
+						<a class="nav-link " href="/personal">个人中心</a>
 					</li>
 					<!--<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>

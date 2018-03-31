@@ -9,4 +9,5 @@ public interface ArticleDao {
     public List<Article> queryArticleByDesc();
     public List<Article> queryDetilsAllArti();
     public Article queryArticleByID(String artId);
+    public List<Article> queryArticleByUID(String uId);
 }

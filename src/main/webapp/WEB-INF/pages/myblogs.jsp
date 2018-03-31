@@ -39,7 +39,7 @@
 						<a class="nav-link" href="/index">主页 <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/myBlogs">我的博客</a>
+						<a class="nav-link" href="/blog">我的博客</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="/wri-blog">写博客</a>
@@ -51,7 +51,7 @@
 						<a class="nav-link " href="/ques-index">提问</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link " href="/personal">个人中心</a>
+						<a class="nav-link " href="#">个人中心</a>
 					</li>
 					<!--<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -71,7 +71,7 @@
 		<div class="container" id="main-body">
 			<div class="row">
 				<div class="col-7" id="body-left">
-					<c:forEach items="${articles}" var="article">
+					<c:forEach items="${myArticles}" var="article">
 					<div id="article">
 						<h1 class="post-title"><a href="#" style="color: #303030;text-decoration:none;">${article.artTitle}</a></h1>
 

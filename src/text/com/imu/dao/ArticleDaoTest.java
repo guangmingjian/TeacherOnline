@@ -40,4 +40,13 @@ public class ArticleDaoTest {
           System.out.println(article.getUser().toString());
         }
     }
+
+    @Test
+    public void queryArticleByUID() {
+       List<Article> articles =   articleDao.queryArticleByUID("1");
+        for (Article article: articles
+                ) {
+            System.out.println(article.getUser().toString());
+        }
+    }
 }

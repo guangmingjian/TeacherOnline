@@ -33,4 +33,12 @@ public  class ArticleServiceImpl implements ArticleService{
     public List<Article> queryDetilsAllArti() {
         return articleDao.queryDetilsAllArti();
     }
+
+    public Article queryArticleByID(String id) {
+        return articleDao.queryArticleByID(id);
+    }
+
+    public List<Article>  queAllArtByUID(String uId) {
+        return articleDao.queryArticleByUID(uId);
+    }
 }

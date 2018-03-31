@@ -45,5 +45,11 @@
         WHERE a.art_cateid = b.cata_id
         AND a.u_id = c.u_id AND a.art_id=#{artId};
     </select>
-
+    <select id="queryArticleByUID" resultMap="articleResult">
+        select a.*,b.cata_name,c.u_name
+        from article a ,Category b,user c
+        WHERE a.art_cateid = b.cata_id
+        AND a.u_id = c.u_id AND c.u_id=#{uId}
+        order BY  a.art_id DESC;
+    </select>
 </mapper>

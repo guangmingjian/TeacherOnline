@@ -45,7 +45,7 @@ String contextPath = request.getContextPath();
 							<a class="nav-link" href="/ques-index">问答</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="#">个人中心</a>
+							<a class="nav-link " href="/personal">个人中心</a>
 						</li>
 					</ul>
 					<form class="form-inline mt-2 mt-md-0">

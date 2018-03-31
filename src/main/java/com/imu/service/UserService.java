@@ -13,5 +13,5 @@ public interface UserService {
     public User doLogin(String email,String password);
     public User isEmail(String email);
     public boolean doReg(User user);
-
+    public boolean updateUser(String id, User user);
 }

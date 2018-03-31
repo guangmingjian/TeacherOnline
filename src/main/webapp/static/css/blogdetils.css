@@ -1,0 +1,8 @@
+pre{
+	border: 1px solid #ced4da;
+	background:#f8f9fa;
+	padding: 10px;
+}
+.card-header a{
+	text-decoration: none;
+}

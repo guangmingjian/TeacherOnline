@@ -17,4 +17,13 @@
         insert into user (u_Email,u_Password,u_Name,u_Tel,u_Age)
         values (#{uEmail},#{uPassword},#{uName},#{uTel},#{uAge})
     </insert>
+    <update id="updateUser">
+        UPDATE  user SET
+        u_email = #{user.uEmail},
+        u_Password = #{user.uPassword},
+        u_Name = #{user.uName},
+        u_Tel = #{user.uTel},
+        u_Age = #{user.uAge}
+        where u_id = #{id}
+    </update>
 </mapper>

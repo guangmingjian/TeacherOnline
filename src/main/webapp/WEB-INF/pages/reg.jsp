@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="col-lg-8 col-lg-offset-2">
-                    <form id="defaultForm" method="post" action="/user/doReg" class="form-horizontal">
+                    <form id="defaultForm" method="post" action="/doReg" class="form-horizontal">
                         <fieldset>
                             <legend>注册信息</legend>
 
@@ -155,7 +155,7 @@
 						},
 
 						remote: {
-							url: "user/vaildUser", //UserAjaxSer
+							url: "vaildUser", //UserAjaxSer
 							type: "Post",
 							message: "用户名已存在",
 							data: {

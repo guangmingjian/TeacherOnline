@@ -73,15 +73,20 @@ public class LoginFilter implements Filter {
      * 在pattenURL中的全部不拦截，所以上面会使用：path.indexOf(urlStr) > -1
      * */
     public void init(FilterConfig arg0) throws ServletException {
+        pattenURL.add("/vaildUser");//ajax验证
+        pattenURL.add("/UserExist");//ajax验证
         pattenURL.add("/login");//登录jsp
         pattenURL.add("/dolog");//处理登录逻辑
         pattenURL.add("/reg");//注册方法
+        pattenURL.add("/doReg");//注册方法
         pattenURL.add("/index");//首页
+        pattenURL.add("static");//静态资源
         pattenURL.add("css");//css
         pattenURL.add("image");//image
-        pattenURL.add("js");//js
-        pattenURL.add("fonts");//fonts
-        pattenURL.add("png");
+//        pattenURL.add("js");//js
+//        pattenURL.add("fonts");//fonts
+//        pattenURL.add("png");
+//        pattenURL.add("jpg");
     }
 
 }

@@ -46,7 +46,7 @@ public class LoginController {
         else {
             session.setAttribute("sess_user", user);
             System.out.println("***************session********  " + user.getuName());
-            return "redirect:/index";
+            return "redirect:/";
         }
     }
 

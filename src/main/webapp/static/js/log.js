@@ -25,7 +25,7 @@ $(function () {
 
                 },
                 type: 'post',
-                url: '/user/UserExist',
+                url: '/UserExist',
                 error: function (data) {
                     console.log(data.email);
                 }

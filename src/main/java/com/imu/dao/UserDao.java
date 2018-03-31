@@ -9,4 +9,5 @@ public interface UserDao {
     public User getUserByEmPa(@Param("uEmail") String uEmail, @Param("uPassword") String uPassword);
     public User getUserByEmail(String uEmail);
     public int addUser(User user);
+    public boolean updateUser(@Param("id")String id,@Param("user") User user);
 }
