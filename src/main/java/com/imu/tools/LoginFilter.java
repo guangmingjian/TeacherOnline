@@ -23,7 +23,7 @@ public class LoginFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpSession session = httpRequest.getSession();
         // 登陆url
-        String loginUrl = httpRequest.getContextPath() + "/login";
+        String loginUrl = httpRequest.getContextPath() + "/index";
         String url = httpRequest.getRequestURI().toString();
 
         /*
