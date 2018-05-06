@@ -18,24 +18,24 @@ public class BlogController {
     @RequestMapping(value = "/blog",method = RequestMethod.GET)
     public  String blogIndex(ModelMap modelMap){
         modelMap.addAttribute("articles",articleService.queryDetilsAllArti());
-        return "blog_index" ;
+        return "blog/blog_index";
     }
     //写博客
     @RequestMapping(value = "/wri-blog",method = RequestMethod.GET)
-    public  String writeBlog(){ return "wri_blog" ;}
+    public  String writeBlog(){ return "blog/wri_blog";}
 
     //博客详情
     @RequestMapping(value = "/blogDetils",method = RequestMethod.GET)
     public  String blogDetils(String artId,ModelMap modelMap){
         modelMap.addAttribute("blogDetil", articleService.queryArticleByID(artId));
-        return "blog-detils" ;
+        return "blog/blog-detils";
     }
     //我的博客
     @RequestMapping(value = "/myBlogs",method = RequestMethod.GET)
     public  String myBlogs(HttpSession session,ModelMap modelMap){
         User user = (User)session.getAttribute("sess_user");
         modelMap.addAttribute("myArticles", articleService.queAllArtByUID(user.getuId()));
-        return "myblogs" ;
+        return "blog/my_blogs";
     }
 
 }

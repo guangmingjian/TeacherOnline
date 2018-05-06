@@ -43,16 +43,16 @@
 						<a class="nav-link" href="#">主页 <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/myBlogs">我的博客</a>
+						<a class="nav-link" href="#">我的博客</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/wri-blog">写博客</a>
+						<a class="nav-link" href="#">写博客</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link " href="#">查看博客</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link " href="/personal">个人中心</a>
+						<a class="nav-link " href="#">个人中心</a>
 					</li>
 					<!--<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -74,18 +74,29 @@
 				<div class="col-10 m-3" id="body-left">
 					<div class="card ">
 						<div class="card-header">
-							<h2>${blogDetil.artTitle}</h2>
-							<a class="text-secondary" href="#">${blogDetil.user.uName}</a>
-							<span >•${blogDetil.artDate}</span>&nbsp;&nbsp;
+							<h2>AI2想从常识测试开始让AI理解物理世界，数据集已公布</h2>
+							<a class="text-secondary" href="#">明鉴</a> 
+							<span >•2018年03月29日</span>&nbsp;&nbsp;
 							<span class="icon-th-list text-secondary">&nbsp;&nbsp;</span>
-							<a href="#" class="text-secondary">${blogDetil.category.cataName}</a>
+							<a href="#" class="text-secondary">java</a>
 						</div>
 						<div class="card-body">
 
 							
 
 							<div id="blog-html" class="text-left p-3 mx-3" >
-                                ${blogDetil.artHtml}
+								<h4 id="h4-using-flowchart"><a name="Using FlowChart" class="reference-link"></a><span class="header-link octicon octicon-link"></span>Using FlowChart</h4><p>setting:</p>
+<pre class=""><code>{
+    flowChart : true
+}
+</code></pre><h4 id="h4-example"><a name="Example" class="reference-link"></a><span class="header-link octicon octicon-link"></span>Example</h4><div class="flowchart">st=>start: User login
+op=>operation: Operation
+cond=>condition: Successful Yes or No?
+e=>end: Into admin
+
+st->op->cond
+cond(yes)->e
+cond(no)->op</div>
 							</div>
 							
 						</div>

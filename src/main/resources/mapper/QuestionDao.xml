@@ -1,0 +1,52 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 使用MyBatis的API方式进行实现 -->
+
+        <!--quId;quTitle; int uId; quType; quValues; quContent; quHtml; quDate;-->
+
+        <!--CREATE TABLE `questions` (-->
+        <!--`qu_id` int(11) NOT NULL COMMENT '自动生成主键',-->
+        <!--`u_id` int(11) NOT NULL COMMENT '用户的id，找到发出问题的用户',-->
+        <!--`qu_title` varchar(50) NOT NULL,-->
+        <!--`qu_type` varchar(50) NOT NULL COMMENT '分类类型，如：心理学，计算机等',-->
+        <!--`qu_values` int(11) NOT NULL,-->
+        <!--`qu_content` text NOT NULL,-->
+        <!--`qu_html` text NOT NULL,-->
+        <!--`qu_date` varchar(50) NOT NULL COMMENT '提出问题时间'-->
+        <!--) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='问题表';-->
+
+<mapper namespace="com.imu.dao.QuestionDao">
+    <insert id="addQuestion" parameterType="Question">
+        insert into questions (u_id,qu_title,ca_id,qu_values,qu_content,qu_html,qu_date)
+        values (#{uId},#{quTitle},#{caId},#{quValues},#{quContent},#{quHtml},#{quDate});
+    </insert>
+    <resultMap id="questionResult" type="com.imu.entity.Question">
+        <id property="quId" column="qu_id" />
+        <result property="uId" column="u_id"/>
+        <result property="caId" column="ca_id"/>
+        <result property="quTitle" column="qu_title"/>
+        <result property="quValues" column="qu_values"/>
+        <result property="quContent" column="qu_content"/>
+        <result property="quHtml" column="qu_html"/>
+        <result property="quDate" column="qu_date"/>
+
+        <association property="user" javaType="com.imu.entity.User">
+            <id property="uId" column="u_id"/>
+            <result property="uName" column="u_name"/>
+        </association>
+        <association property="category" javaType="com.imu.entity.Category">
+            <id property="caId" column="cata_id"/>
+            <result property="cataName" column="cata_name"/>
+        </association>
+    </resultMap>
+
+    <select id="queryAll" resultMap="questionResult">
+        select a.*,b.cata_name,c.u_name
+        from questions a ,Category b,user c
+        WHERE a.ca_id = b.cata_id
+        AND a.u_id = c.u_id
+        order BY  a.qu_id DESC
+        ;
+    </select>
+</mapper>
