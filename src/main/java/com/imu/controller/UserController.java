@@ -1,7 +1,9 @@
 package com.imu.controller;
 
 import com.google.gson.Gson;
+import com.imu.entity.Article;
 import com.imu.entity.User;
+import com.imu.service.ArticleService;
 import com.imu.service.UserService;
 import com.imu.tools.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @Controller
 @SessionAttributes("user")
@@ -24,12 +27,21 @@ public class UserController {
 
     @Autowired
     UserService userService;
+    @Autowired
+    ArticleService articleService;
     Gson gson = new Gson();
 
     //返回个人中心
     @RequestMapping(value = "/personal",method = RequestMethod.GET)
     public String  personal(){
         return "personal";
+    }
+    //个人主页
+    @RequestMapping(value = "/peopleHome",method = RequestMethod.GET)
+    public String  peopleHome(String uId,ModelMap modelMap){
+        modelMap.addAttribute("user",userService.getUserById(uId));
+        modelMap.addAttribute("articles",articleService.queAllArtByUID(uId));
+        return "peoplehome";
     }
 
     @RequestMapping(value = "/UserExist",method = RequestMethod.POST)

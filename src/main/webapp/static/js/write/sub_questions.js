@@ -99,7 +99,7 @@ function  sub_question() {
         dataType: 'text',
         success: function(data) {
             alert(data);
-            location.href = "/blog";
+            location.href = "/ques-list";
             //  alert(searchUrl);
             //window.location.href = searchUrl;
         },

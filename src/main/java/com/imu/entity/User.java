@@ -8,6 +8,7 @@ public class User {
     String uName;
     String uTel;
     String uAge;
+    String field;
 
     public User() {
     }
@@ -18,6 +19,27 @@ public class User {
         this.uName = uName;
         this.uTel = uTel;
         this.uAge = uAge;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uId='" + uId + '\'' +
+                ", uEmail='" + uEmail + '\'' +
+                ", uPassword='" + uPassword + '\'' +
+                ", uName='" + uName + '\'' +
+                ", uTel='" + uTel + '\'' +
+                ", uAge='" + uAge + '\'' +
+                ", field='" + field + '\'' +
+                '}';
+    }
+
+    public String getField() {
+        return field;
+    }
+
+    public void setField(String field) {
+        this.field = field;
     }
 
     public String getuId() {
@@ -68,15 +90,4 @@ public class User {
         this.uAge = uAge;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "uId='" + uId + '\'' +
-                ", uEmail='" + uEmail + '\'' +
-                ", uPassward='" + uPassword + '\'' +
-                ", uName='" + uName + '\'' +
-                ", uTel='" + uTel + '\'' +
-                ", uAge='" + uAge + '\'' +
-                '}';
-    }
 }

@@ -23,7 +23,14 @@ public class QuestionSerIpl implements QuestionService {
     }
 
     public List<Question> allQuestions() {
-
         return questionDao.queryAll();
+    }
+
+    public Question detailsById(int id) {
+        return questionDao.queryById(id);
+    }
+
+    public List<Question> fieldQuestion(String caid) {
+        return questionDao.queryByCaID(caid);
     }
 }

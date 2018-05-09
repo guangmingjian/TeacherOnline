@@ -40,21 +40,21 @@
 									<img src="static/images/icons/psychology.png" />
 								</div>
 
-								<a href="#">心理学</a>
+								<a href="quesFieldList?caId=5">心理学</a>
 							</div>
 							<div class="col">
 								<div class='radius'>
 									<img src="static/images/icons/medicines.png" />
 								</div>
 
-								<a href="#">医学</a>
+								<a href="quesFieldList?caId=6">医学</a>
 							</div>
 							<div class="col">
 								<div class='radius'>
 									<img src="static/images/icons/financial_servicess.png" />
 								</div>
 
-								<a href="#">理财</a>
+								<a href="quesFieldList?caId=7">理财</a>
 							</div>
 
 							<div class="col">
@@ -62,7 +62,7 @@
 									<img src="static/images/icons/insurance.png" />
 								</div>
 
-								<a href="#">保险</a>
+								<a href="quesFieldList?caId=8">保险</a>
 							</div>
 							<div class="col">
 								<div class='radius' style="color: #2b8ff7; font-size: 18px;">
@@ -77,59 +77,86 @@
 					<!--搜索分类结束-->
 
 					<!--搜索主体-->
-					<div class="question ">
 
-						<h5>热门答主</h5>
-						<div class="question_body">
-							<div class="question_ele">
-								<div class=" row">
-									<div class="col-2">
-										<a href="#"><img src="static/images/pic/1dc4b5dd6_xs.jpg" /></a>
-									</div>
-									<div class="col-9">
-										<h6>张伟忠</h6>
-										<span class="question_num">7640个回答.215131.4元收入</span>
+					<%--<div class="question ">--%>
 
-										<p>交流买本心得，帮助电脑小白</p>
-										<button type="button" class="btn btn-success">¥20提问</button>
-									</div>
-								</div>
+						<%--<h5>热门答主</h5>--%>
+						<%--<div class="question_body">--%>
+							<%--<div class="question_ele">--%>
+								<%--<div class=" row">--%>
+									<%--<div class="col-2">--%>
+										<%--<a href="#"><img src="static/images/pic/1dc4b5dd6_xs.jpg" /></a>--%>
+									<%--</div>--%>
+									<%--<div class="col-9">--%>
+										<%--<h6>张伟忠</h6>--%>
+										<%--<span class="question_num">7640个回答.215131.4元收入</span>--%>
 
+										<%--<p>交流买本心得，帮助电脑小白</p>--%>
+										<%--<button type="button" class="btn btn-success">¥20提问</button>--%>
+									<%--</div>--%>
+								<%--</div>--%>
+
+							<%--</div>--%>
+							<%--<div class="question_ele">--%>
+								<%--<div class="row">--%>
+									<%--<div class="col-2">--%>
+										<%--<a href="#"><img src="static/images/pic/1dc4b5dd6_xs.jpg" /></a>--%>
+									<%--</div>--%>
+									<%--<div class="col-9">--%>
+										<%--<h6>张伟忠</h6>--%>
+										<%--<span class="question_num">7640个回答.215131.4元收入</span>--%>
+
+										<%--<p>交流买本心得，帮助电脑小白</p>--%>
+										<%--<button type="button" class="btn btn-success">¥20提问</button>--%>
+									<%--</div>--%>
+								<%--</div>--%>
+
+							<%--</div>--%>
+							<%--<div class="question_ele">--%>
+								<%--<div class="row">--%>
+									<%--<div class="col-2">--%>
+										<%--<a href="#"><img src="static/images/pic/1dc4b5dd6_xs.jpg" /></a>--%>
+									<%--</div>--%>
+									<%--<div class="col-9">--%>
+										<%--<h6>张伟忠</h6>--%>
+										<%--<span class="question_num">7640个回答.215131.4元收入</span>--%>
+											<%--<!--<p>交流买本心得，帮助电脑小白</p>-->--%>
+										<%--<p>我们知道 div是块级元素,是独占一行的.一般情况下,两个相邻的div是不会处于一行的例如:</p>--%>
+										<%--<button type="button" class="btn btn-success">¥20提问</button>--%>
+									<%--</div>--%>
+								<%--</div>--%>
+
+							<%--</div>--%>
+
+						<%--</div>--%>
+					<%--</div>--%>
+					<c:forEach items="${questions}" var="question">
+						<div id="article">
+							<h1 class="post-title"><a href="#" style="color: #303030;text-decoration:none;">${question.quTitle}</a></h1>
+
+							<div class="post-meta">
+								<span class="author">作者：<a href="/peopleHome?uId=${question.uId}" style="text-decoration:none;">${question.user.uName}</a></span> &bull;
+								<time class="post-date" >${question.quDate}</time>
 							</div>
-							<div class="question_ele">
-								<div class="row">
-									<div class="col-2">
-										<a href="#"><img src="static/images/pic/1dc4b5dd6_xs.jpg" /></a>
-									</div>
-									<div class="col-9">
-										<h6>张伟忠</h6>
-										<span class="question_num">7640个回答.215131.4元收入</span>
+							<br />
+								<%--<div class="post-content" style="text-align: left;">--%>
+								<%--<p>&nbsp;&nbsp;&nbsp;&nbsp;${article.artSummary}</p>--%>
+								<%--</div>--%>
 
-										<p>交流买本心得，帮助电脑小白</p>
-										<button type="button" class="btn btn-success">¥20提问</button>
-									</div>
-								</div>
-
-							</div>
-							<div class="question_ele">
-								<div class="row">
-									<div class="col-2">
-										<a href="#"><img src="static/images/pic/1dc4b5dd6_xs.jpg" /></a>
-									</div>
-									<div class="col-9">
-										<h6>张伟忠</h6>
-										<span class="question_num">7640个回答.215131.4元收入</span>
-											<!--<p>交流买本心得，帮助电脑小白</p>-->
-										<p>我们知道 div是块级元素,是独占一行的.一般情况下,两个相邻的div是不会处于一行的例如:</p>
-										<button type="button" class="btn btn-success">¥20提问</button>
-									</div>
-								</div>
-
+							<div class="post-permalink">
+								<a href="/ques-details?queId=${question.quId}"><button type="button" class="btn btn-success">问题详情</button></a>
 							</div>
 
+							<footer class="post-footer clearfix">
+								<div class="pull-left tag-list">
+									<i class="fa fa-folder-open-o"></i>
+									<a href="quesFieldList?caId=${question.caId}" style="color: #959595;">${question.category.cataName}</a>
+								</div>
+								<div class="pull-right share">
+								</div>
+							</footer>
 						</div>
-					</div>
-
+					</c:forEach>
 				</div>
 				<!--搜索主体结束-->
 

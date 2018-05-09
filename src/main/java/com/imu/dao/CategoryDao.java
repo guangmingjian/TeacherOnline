@@ -8,4 +8,5 @@ import java.util.List;
 public interface CategoryDao {
     public Category getCateByNameID(@Param("uId") String uId,@Param("cataName") String cataName  );
     public List<Category> getCateByUId(String uId);
+    public int add(Category category);
 }

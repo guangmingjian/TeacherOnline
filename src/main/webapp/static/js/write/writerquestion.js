@@ -73,6 +73,29 @@ $(function() {
 	$("#close-toolbar-btn").click(function() {
 		testEditor.hideToolbar();
 	});
+
+    $("#sub-type").click(function() {
+        if ($('#add-type').val().trim()==''){
+            alert('请输入分类！');
+            return false;
+        }
+        $.ajax({
+            data: {
+                'cateName':$('#add-type').val()
+            },
+            dataType: 'text',
+            success: function(data) {
+                alert(data);
+                searchUrl = encodeURI("/show?htmltext=" +
+                    data);
+                location.href = "/wri-blog";
+                //  alert(searchUrl);
+                //window.location.href = searchUrl;
+            },
+            type: 'post',
+            url: '/add-category'
+        })
+    });
 });
 
 function sub_form() {

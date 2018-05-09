@@ -22,7 +22,8 @@ function updateUser() {
             'uPassword':$('#password').val(),
             'uName': $('#uName').val(),
             'uTel':$('#tel').val(),
-            'uAge':$('#age').val()
+            'uAge':$('#age').val(),
+            'field':$('#field').val()
         },
         dataType: 'text',
         success: function(data) {

@@ -1,6 +1,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--String uId;-->
+        <!--String cataName;-->
 <!-- 使用MyBatis的API方式进行实现 -->
 <mapper namespace="com.imu.dao.CategoryDao">
     <select id="getCateByUId" resultType="Category">
@@ -9,5 +11,9 @@
     <select id="getCateByNameID" resultType="Category">
         SELECT * FROM Category WHERE  u_id=#{uId} AND cata_name=#{cataName} ;
     </select>
+    <insert id="add" parameterType="Category">
+        insert into Category (u_id,cata_name)
+        values (#{uId},#{cataName});
+    </insert>
 
 </mapper>

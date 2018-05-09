@@ -1,0 +1,44 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 使用MyBatis的API方式进行实现 -->
+        <!--int reId;-->
+        <!--int uId;-->
+        <!--int quId;-->
+        <!--String reHtml;-->
+        <!--String reMd;-->
+        <!--String reDate;-->
+ <!--SELECT * FROM `response` where qu_id=#{quId} order by `re_id` ASC ;-->
+
+<mapper namespace="com.imu.dao.ResponseDao">
+    <resultMap id="responseResult" type="com.imu.entity.Response">
+        <id property="reId" column="re_id" />
+        <result property="uId" column="u_id"/>
+        <result property="quId" column="qu_id"/>
+        <result property="reHtml" column="re_html"/>
+        <result property="reMd" column="re_md"/>
+        <result property="reDate" column="re_date"/>
+
+        <association property="user" javaType="com.imu.entity.User">
+            <id property="uId" column="u_id"/>
+            <result property="uName" column="u_name"/>
+        </association>
+        <!--<association property="questions" javaType="com.imu.entity.Question">-->
+            <!--<id property="quId" column="qu_id"/>-->
+            <!--<result property="cataName" column="cata_name"/>-->
+        <!--</association>-->
+
+    </resultMap>
+    <select id="queryByQuId" resultMap="responseResult">
+        select a.*,c.u_name
+        from `response` a ,user c
+        WHERE a.u_id = c.u_id AND a.qu_id=#{quId}
+        order by `re_id` ASC ;
+
+    </select>
+    <insert id="addResponse" parameterType="Response">
+        insert into response (u_id,qu_id,re_html,re_md,re_date)
+        values (#{uId},#{quId},#{reHtml},#{reMd},#{reDate});
+    </insert>
+
+</mapper>

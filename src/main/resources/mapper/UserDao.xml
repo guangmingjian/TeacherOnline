@@ -23,7 +23,8 @@
         u_Password = #{user.uPassword},
         u_Name = #{user.uName},
         u_Tel = #{user.uTel},
-        u_Age = #{user.uAge}
+        u_Age = #{user.uAge},
+        field = #{user.field}
         where u_id = #{id}
     </update>
 </mapper>

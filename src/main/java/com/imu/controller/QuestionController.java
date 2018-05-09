@@ -5,6 +5,7 @@ import com.imu.entity.Category;
 import com.imu.entity.Question;
 import com.imu.entity.User;
 import com.imu.service.QuestionService;
+import com.imu.service.ResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,17 +23,27 @@ public class QuestionController {
     @Autowired
     QuestionService questionService;
     @Autowired
+    ResponseService responseService;
+    @Autowired
     CategoryDao categoryDao;
     List<Question> questions;
     //返回问答首页
     @RequestMapping(value = "/ques-index",method = RequestMethod.GET)
-    public String quesIndex(){ return "question/question-index"; }
+    public String quesIndex(ModelMap modelMap){
+        questions = questionService.allQuestions();
+        modelMap.addAttribute("questions",questions);
+        return "question/question-index";
+    }
 
     //返回提问界面
     @RequestMapping(value = "/ques",method = RequestMethod.GET)
-    public String ques(){ return "question/question"; }
+    public String ques(ModelMap modelMap){
+//        获取管理员添加的问题种类
+        modelMap.addAttribute("categories",categoryDao.getCateByUId("0"));
+        return "question/question";
+    }
 
-    //问题提交处理界面
+    //问题提交处理控制
     @RequestMapping(value = "/ques-sub",method = RequestMethod.POST)
     public String quesSub(Question question,String quType, HttpSession session, HttpServletResponse response){
 //        获取type对应的id
@@ -70,5 +81,19 @@ public class QuestionController {
         modelMap.addAttribute("questions",questions);
         return "question/question_list";
     }
-
+    //问题详情
+    @RequestMapping(value = "/ques-details",method = RequestMethod.GET)
+    public String quesDetails(ModelMap modelMap,String queId){
+        Question question = questionService.detailsById(Integer.parseInt(queId));
+        modelMap.addAttribute("question",question);
+        modelMap.addAttribute("responses",responseService.responsesByquId(Integer.parseInt(queId)));
+        return "question/ques-detils";
+    }
+    //某一领域问题清单
+    @RequestMapping(value = "/quesFieldList",method = RequestMethod.GET)
+    public String quesfieldLists(String caId,ModelMap modelMap){
+        questions = questionService.fieldQuestion(caId);
+        modelMap.addAttribute("questions",questions);
+        return "question/question_list";
+    }
 }

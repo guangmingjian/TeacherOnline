@@ -14,23 +14,15 @@
     <link href="static/bootstrap4.0/css/bootstrap.min.css" rel="stylesheet" />
 
     <link href="static/css/bloghome.css" rel="stylesheet" rel="stylesheet" />
-    <link href="static/bootstrap4.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="static/css/question.css" rel="stylesheet" />
-    <link href="static/css/que_content.css" rel="stylesheet" />
+
     <script src="static/bootstrap4.0/js/jquery-3.2.1.js"></script>
-    <script src="static/js/que_content.js"></script>
-    <!--引入markdown开始-->
-    <link rel="stylesheet" href="static/editormd/editormd.css" />
-    <script src="static/editormd/tools/jquery.min.js"></script>
-    <script src="static/editormd/editormd.js"></script>
-    <!--引入markdown结束-->
-    <script src="static/js/write/sub_questions.js"></script>
+
 </head>
 
 <body>
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="padding-left: 50px;">
-    <a class="navbar-brand" href="#">问答专栏</a>
+    <a class="navbar-brand" href="/ques-index">问答专栏</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

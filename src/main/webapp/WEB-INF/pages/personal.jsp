@@ -101,6 +101,12 @@
 								</div>
 								<input id="tel" type="text" class="form-control" value="${sessionScope.sess_user.uTel}">
 							</div>
+							<div class="input-group mb-3 mt-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text">个人领域</span>
+								</div>
+								<input id="field" type="text" class="form-control" value="${sessionScope.sess_user.field}">
+							</div>
 							
 							
 							<button type="submit" class="btn btn-success position-relative mb-1 " onclick="updateUser()">修改</button>

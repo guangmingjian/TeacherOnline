@@ -10,4 +10,5 @@ public interface ArticleService {
     public List<Article> queryDetilsAllArti();
     public Article queryArticleByID(String id);
     public List<Article> queAllArtByUID(String uId);
+    public List<Article> queFiledArticles(String caId);
 }

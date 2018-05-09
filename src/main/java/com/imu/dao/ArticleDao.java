@@ -10,4 +10,5 @@ public interface ArticleDao {
     public List<Article> queryDetilsAllArti();
     public Article queryArticleByID(String artId);
     public List<Article> queryArticleByUID(String uId);
+    public List<Article> queryArticlesByCaId(String caId);
 }

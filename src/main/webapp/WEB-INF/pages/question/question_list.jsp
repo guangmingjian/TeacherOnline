@@ -35,7 +35,7 @@
 						<h1 class="post-title"><a href="#" style="color: #303030;text-decoration:none;">${question.quTitle}</a></h1>
 
 						<div class="post-meta">
-							<span class="author">作者：<a href="#" style="text-decoration:none;">${question.user.uName}</a></span> &bull;
+							<span class="author">作者：<a href="/peopleHome?uId=${question.uId}" style="text-decoration:none;">${question.user.uName}</a></span> &bull;
 							<time class="post-date" >${question.quDate}</time>
 						</div>
 						<br />
@@ -44,13 +44,13 @@
 						<%--</div>--%>
 
 						<div class="post-permalink">
-							<a href="/ques-Details?queId=${question.quId}"><button type="button" class="btn btn-success">问题详情</button></a>
+							<a href="/ques-details?queId=${question.quId}"><button type="button" class="btn btn-success">问题详情</button></a>
 						</div>
 
 						<footer class="post-footer clearfix">
 							<div class="pull-left tag-list">
 								<i class="fa fa-folder-open-o"></i>
-								<a href="#" style="color: #959595;">${question.category.cataName}</a>
+								<a href="quesFieldList?caId=${question.caId}" style="color: #959595;">${question.category.cataName}</a>
 							</div>
 							<div class="pull-right share">
 							</div>

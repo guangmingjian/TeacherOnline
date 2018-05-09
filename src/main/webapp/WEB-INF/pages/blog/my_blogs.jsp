@@ -32,7 +32,7 @@
 						<h1 class="post-title"><a href="#" style="color: #303030;text-decoration:none;">${article.artTitle}</a></h1>
 
 						<div class="post-meta">
-							<span class="author">作者：<a href="/author/wangsai/" style="text-decoration:none;">${article.user.uName}</a></span> &bull;
+							<span class="author">作者：<a href="#" style="text-decoration:none;">${article.user.uName}</a></span> &bull;
 							<time class="post-date" >${article.artDate}</time>
 						</div>
 						<br />

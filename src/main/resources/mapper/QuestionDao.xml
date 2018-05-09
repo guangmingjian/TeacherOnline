@@ -49,4 +49,17 @@
         order BY  a.qu_id DESC
         ;
     </select>
+    <select id="queryById" resultMap="questionResult">
+    select a.*,b.cata_name,c.u_name
+    from questions a ,Category b,user c
+    WHERE a.ca_id = b.cata_id
+    AND a.u_id = c.u_id AND a.qu_id=#{quId};
+    </select>
+    <select id="queryByCaID" resultMap="questionResult">
+        select a.*,b.cata_name,c.u_name
+        from questions a ,Category b,user c
+        WHERE a.ca_id = b.cata_id
+        AND a.u_id = c.u_id AND a.ca_id=#{caid}
+        order BY  a.qu_id DESC;
+    </select>
 </mapper>

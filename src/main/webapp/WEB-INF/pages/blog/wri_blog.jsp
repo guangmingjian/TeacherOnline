@@ -47,15 +47,16 @@
 								<input id="art-title" type="text" class="form-control" placeholder="请输入标题">
 							</div>
 
+
+
 							<div class="input-group mb-3 my-5">
 								<div class="input-group-prepend">
 									<span class="input-group-text" >分类</span>
 								</div>
 								<select id="cata" class="form-control" style="width: 80%;">
-									<option>java</option>
-									<option>bootstrap</option>
-									<option>javaweb</option>
-									<option>springmvc</option>
+                                    <c:forEach items="${categorys}" var="cate">
+                                        <option>${cate.cataName}</option>
+                                    </c:forEach>
 								</select>
 
 							</div>
@@ -66,6 +67,12 @@
 								<span class="input-group-text" id="basic-addon1">概括</span>
 								<textarea id="summary" type="text" class="form-control" placeholder="内容概括 :  最多150字" maxlength="150"></textarea>
 							</div>
+                            <div class="input-group mb-3 mt-5">
+                                <div class="input-group-prepend">
+                                    <button id="sub-type" type="submit" class="input-group-text btn btn-light" >添加分类</button>
+                                </div>
+                                <input id="add-type" type="text" class="form-control" placeholder="请输入新分类">
+                            </div>
 							<div class="btns" class="my-2">
 								<button id="show-btn">显示</button>
 								<button id="hide-btn">隐藏</button>

@@ -12,7 +12,7 @@
 
 		<link href="static/bootstrap4.0/css/bootstrap.css" rel="stylesheet" />
 		<link href="static/bootstrap4.0/css/bootstrap.min.css" rel="stylesheet" />
-		
+
 		<link href="static/css/bloghome.css" rel="stylesheet" rel="stylesheet" />
 		<link href="static/bootstrap4.0/css/font-awesome.min.css" rel="stylesheet" />
 		<link href="static/css/question.css" rel="stylesheet" />
@@ -24,91 +24,50 @@
 		<script src="static/editormd/tools/jquery.min.js"></script>
 		<script src="static/editormd/editormd.js"></script>
 		<!--引入markdown结束-->
-		<script src="static/js/write/sub_questions.js"></script>
+		<script src="static/js/write/writerquestion.js"></script>
 	</head>
 
 	<body>
 
+	<jsp:include page="head/blog-head.jsp" flush="true"></jsp:include>
 
-		<jsp:include page="../head/question-head.jsp" flush="true"></jsp:include>
 		<div class="container" id="main-body">
 			<div class="row">
 				<div class="col-7" id="body-left">
 					<div class="card m-3">
 						<div class="card-header">
-							<h2>请写下你的问题</h2>
+							<h2>${user.uName}的博客</h2>
+							<span>专业领域：${user.field}</span>
 						</div>
 						<div class="card-body">
-							<div class="card-title text-dark">描述精确的问题更易得到解答</div>
-
-							<div class="input-group mb-3 mt-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text" >标题</span>
-								</div>
-								<input id="title" type="text" class="form-control" placeholder="请输入标题">
-							</div>
-
-							<div class="input-group mb-3 my-5">
-								<div class="input-group-prepend">
-									<span class="input-group-text" >话题</span>
-								</div>
-								<select id="type" class="form-control" style="width: 80%;">
-									<c:forEach items="${categories}" var="cate">
-										<option>${cate.cataName}</option>
-									</c:forEach>
-
-									<%--<option>医学</option>--%>
-									<%--<option>理财</option>--%>
-									<%--<option>保险</option>--%>
-								</select>
-
-							</div>
-							<div class="input-group mb-3 mt-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text" >价格</span>
-								</div>
-								<input id="value" type="text" class="form-control " placeholder="请输入价格">
-								</div>
-							<span class="my-2 h5">问题描述</span><br /><br />
-							
-							<div class="btns" class="my-2">
-								<button id="show-btn">显示</button>
-								<button id="hide-btn">隐藏</button>
-								<button id="get-md-btn">查看md</button>
-								<button id="get-html-btn">查看html</button>
-								<button id="watch-btn">预览</button>
-								<button id="unwatch-btn">关闭预览</button>
-								<button id="preview-btn">预览html</button>
-								<button id="fullscreen-btn">全屏 (esc 退出)</button>
-								<button id="show-toolbar-btn">显示工具条</button>
-								<button id="close-toolbar-btn">隐藏工具条</button>
-							</div>
-
-							<div id="test-editormd" class="mx-2">
-								<textarea style="display:none;">#### Using FlowChart
-
-setting:
-
-    {
-        flowChart : true
-    }
-
-#### Example
-
-```flow
-st=>start: User login
-op=>operation: Operation
-cond=>condition: Successful Yes or No?
-e=>end: Into admin
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```</textarea>
-
-							</div>
-
-							<button class="btn btn-success mt-2 mb-5" onclick="sub_question()">提交问题</button>
+							<table class="table table-striped table-hover ">
+								<thead>
+									<tr>
+										<th>序号</th>
+										<th>标题</th>
+										<th>分类</th>
+										<th>发布时间</th>
+										<th>查看</th>
+									</tr>
+								</thead>
+								<tbody>
+                                <%
+                                    int counter = 0;
+                                %>
+                                <c:forEach items="${articles}" var="article">
+                                    <%
+                                        counter ++;
+                                    %>
+									<tr>
+										<td style="width: 10%;"><%=counter%></td>
+										<td style="width: 25%;">${article.artTitle}</td>
+										<td style="width: 18%;">${article.category.cataName}</td>
+										<td style="width: 18%;">${article.artDate} </td>
+										<th style="width: 10%;"> <a href="/blogDetils?artId=${article.artId}" class="btn btn-success text-light">查看</a></th>
+									</tr>
+                                </c:forEach>
+								</tbody>
+							</table>
 						</div>
 					</div>
 
