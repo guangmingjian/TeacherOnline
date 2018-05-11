@@ -32,7 +32,7 @@
 						<h1 class="post-title"><a href="#" style="color: #303030;text-decoration:none;">${article.artTitle}</a></h1>
 
 						<div class="post-meta">
-							<span class="author">作者：<a href="#" style="text-decoration:none;">${article.user.uName}</a></span> &bull;
+							<span class="author">作者：<a href="/peopleHome?uId=${article.user.uId}" style="text-decoration:none;">${article.user.uName}</a></span> &bull;
 							<time class="post-date" >${article.artDate}</time>
 						</div>
 						<br />
@@ -47,7 +47,7 @@
 						<footer class="post-footer clearfix">
 							<div class="pull-left tag-list">
 								<i class="fa fa-folder-open-o"></i>
-								<a href="/tag/android/" style="color: #959595;">${article.category.cataName}</a>
+								<a href="/fieldBlogs?caId=${article.artCateid}" style="color: #959595;">${article.category.cataName}</a>
 							</div>
 							<div class="pull-right share">
 							</div>
@@ -55,36 +55,7 @@
 					</div>
 					</c:forEach>
 
-					<div id="article">
-						<h1 class="post-title"><a href="#" style="color: #303030;text-decoration:none;">Android 版 Ghost 客户端来了！</a></h1>
 
-						<div class="post-meta">
-							<span class="author">作者：<a href="/author/wangsai/" style="text-decoration:none;">王赛</a></span> &bull;
-							<time class="post-date" datetime="2018年1月22日星期一下午5点03分" title="2018年1月22日星期一下午5点03分">2018年1月22日</time>
-						</div>
-						<br />
-						<div class="featured-media">
-							<a href="/android-app-for-ghost/"><img style="width: 100%;" src="static/images/picture/765c76cb1ca259dd8fe8002459bbc.jpg" alt="Android 版 Ghost 客户端来了！"></a>
-						</div>
-						<div class="post-content" style="text-align: left;">
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;Ghost 从一开始就支持响应式 Web 使用体验，但是我们今天仍然向前迈出了一大步 -- 推出 Android 平台原生 APP ！ 我们一直试图为 Ghost 用户构建一个可靠的移动端 Web 体验，但不可避免地，它在它所能做的事情上仍然是相当受限的。即便是在 2017 年的
-							</p>
-						</div>
-
-						<div class="post-permalink">
-							<button type="button" class="btn btn-success">阅读原文</button>
-						</div>
-
-						<footer class="post-footer clearfix">
-							<div class="pull-left tag-list">
-								<i class="fa fa-folder-open-o"></i>
-								<a href="/tag/android/" style="color: #959595;">Android</a>
-								<a href="/tag/ke-hu-duan/" style="color: #959595;">客户端</a>
-							</div>
-							<div class="pull-right share">
-							</div>
-						</footer>
-					</div>
 
 				</div>
 				<div class="col-4" id="body-right">

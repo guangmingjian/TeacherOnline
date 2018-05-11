@@ -30,6 +30,7 @@
         <result property="quContent" column="qu_content"/>
         <result property="quHtml" column="qu_html"/>
         <result property="quDate" column="qu_date"/>
+        <result property="quFfinishUId" column="qu_finishUId"/>
 
         <association property="user" javaType="com.imu.entity.User">
             <id property="uId" column="u_id"/>
@@ -62,4 +63,9 @@
         AND a.u_id = c.u_id AND a.ca_id=#{caid}
         order BY  a.qu_id DESC;
     </select>
+    <update id="updateQuestionFin">
+        UPDATE  questions SET
+        qu_finishUId = #{reId}
+        where qu_id = #{quId}
+    </update>
 </mapper>

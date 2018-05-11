@@ -12,7 +12,7 @@ String contextPath = request.getContextPath();
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<meta http-equiv="refresh" content="1;URL=index">
+		<meta http-equiv="refresh" content="2;URL=index">
 		<title></title>
 
 		<link rel="stylesheet" href="static/css/first.css" />

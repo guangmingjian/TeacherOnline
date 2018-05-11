@@ -10,4 +10,5 @@ public interface UserDao {
     public User getUserByEmail(String uEmail);
     public int addUser(User user);
     public boolean updateUser(@Param("id")String id,@Param("user") User user);
+    public boolean updateValue(@Param("id")String uId,@Param("value")int value);
 }

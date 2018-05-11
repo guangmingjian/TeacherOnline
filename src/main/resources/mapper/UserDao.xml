@@ -27,4 +27,9 @@
         field = #{user.field}
         where u_id = #{id}
     </update>
+    <update id="updateValue">
+        UPDATE  user SET
+        user.values = #{value}
+        where u_id = #{id}
+    </update>
 </mapper>

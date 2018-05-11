@@ -9,17 +9,7 @@ public class User {
     String uTel;
     String uAge;
     String field;
-
-    public User() {
-    }
-
-    public User(String uEmail, String uPassword, String uName, String uTel, String uAge) {
-        this.uEmail = uEmail;
-        this.uPassword = uPassword;
-        this.uName = uName;
-        this.uTel = uTel;
-        this.uAge = uAge;
-    }
+    String values;
 
     @Override
     public String toString() {
@@ -31,7 +21,27 @@ public class User {
                 ", uTel='" + uTel + '\'' +
                 ", uAge='" + uAge + '\'' +
                 ", field='" + field + '\'' +
+                ", values='" + values + '\'' +
                 '}';
+    }
+
+    public String getValues() {
+        return values;
+    }
+
+    public void setValues(String values) {
+        this.values = values;
+    }
+
+    public User() {
+    }
+
+    public User(String uEmail, String uPassword, String uName, String uTel, String uAge) {
+        this.uEmail = uEmail;
+        this.uPassword = uPassword;
+        this.uName = uName;
+        this.uTel = uTel;
+        this.uAge = uAge;
     }
 
     public String getField() {

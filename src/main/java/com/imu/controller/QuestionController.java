@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -95,5 +97,35 @@ public class QuestionController {
         questions = questionService.fieldQuestion(caId);
         modelMap.addAttribute("questions",questions);
         return "question/question_list";
+    }
+    //采纳问题
+    @RequestMapping(value = "/acceptResponse",method = RequestMethod.GET)
+    public String accept(String reId,String quId,HttpServletResponse response,ModelMap modelMap){
+        if( questionService.adaptResponse(quId,reId)) {
+            try {
+                PrintWriter out = response.getWriter();
+                out.print("<script>alert('update success...'); window.location='/ques-details?queId=" +quId+
+                        "' </script>");
+                out.flush();
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return "question/ques-detils";
+        }
+       else{
+            try {
+                PrintWriter out = response.getWriter();
+                out.print("<script>alert('update failed...money is not enough');" +
+                        "window.location='/ques-details?queId=" +quId+
+                        "' </script>");
+                out.flush();
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return "/ques-details?queId"+quId;
+
+        }
     }
 }

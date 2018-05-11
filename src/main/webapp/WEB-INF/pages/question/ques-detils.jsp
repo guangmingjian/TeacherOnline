@@ -57,14 +57,18 @@
                 <c:forEach items="${responses}" var="response">
                 <div class="card mt-2">
                     <div class="card-header text-left mt-2">
+                        <%--${question.quFfinishUId}--%>
                         <%
                            count ++;
                         %>
                         <span><%=count%>#</span>
                         <span>评论：</span>
                         <a href="#">${response.user.uName}</a>
-                        <c:if test="${question.uId == sessionScope.sess_user.uId && response.uId!=sessionScope.sess_user.uId}">
-                            <a href="#" class="float-right">采纳</a>
+                        <c:if test="${question.quFfinishUId<1 &&question.uId == sessionScope.sess_user.uId && response.uId!=sessionScope.sess_user.uId}">
+                            <a href="acceptResponse?reId=${response.reId}&quId=${question.quId}" class="float-right">采纳</a>
+                        </c:if>
+                        <c:if test="${question.quFfinishUId == response.reId}">
+                            <span class="float-right text-danger">被采纳</span>
                         </c:if>
 
                     </div>

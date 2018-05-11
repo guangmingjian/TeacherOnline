@@ -10,4 +10,5 @@ public interface QuestionService {
     public List<Question> allQuestions();
     public Question detailsById(int id);
     public List<Question> fieldQuestion(String caid);
+    public boolean adaptResponse(String queId,String reId);
 }

@@ -40,5 +40,9 @@
         insert into response (u_id,qu_id,re_html,re_md,re_date)
         values (#{uId},#{quId},#{reHtml},#{reMd},#{reDate});
     </insert>
+    <select id="queryByReId" resultType="Response">
+        SELECT * FROM `response`
+        WHERE re_id=#{reId};
+    </select>
 
 </mapper>

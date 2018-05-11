@@ -34,10 +34,10 @@
 					<div class="card ">
 						<div class="card-header">
 							<h2>${blogDetil.artTitle}</h2>
-							<a class="text-secondary" href="/peopleHome?uId=${article.user.uId}">${blogDetil.user.uName}</a>
+							<a class="text-secondary" href="/peopleHome?uId=${blogDetil.user.uId}">${blogDetil.user.uName}</a>
 							<span >•${blogDetil.artDate}</span>&nbsp;&nbsp;
 							<span class="icon-th-list text-secondary">&nbsp;&nbsp;</span>
-							<a href="/fieldBlogs?caId=${article.artCateid}" class="text-secondary">${blogDetil.category.cataName}</a>
+							<a href="/fieldBlogs?caId=${blogDetil.artCateid}" class="text-secondary">${blogDetil.category.cataName}</a>
 						</div>
 						<div class="card-body">
 

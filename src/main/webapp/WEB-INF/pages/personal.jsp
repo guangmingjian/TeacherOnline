@@ -26,41 +26,7 @@
 	</head>
 
 	<body>
-		<a href="#">
-			<span class="glyphicon glyphicon-folder-open"></span>
-		</a>
-		<header class="main-header"></header>
-
-		<nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="padding-left: 50px;">
-			<a class="navbar-brand" href="#">博客专栏</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-			<div class="collapse navbar-collapse" id="navbarsExample03">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="/index">主页 <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/myBlogs">我的博客</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/wri-blog">写博客</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link " href="#">查看博客</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link " href="/personal">个人中心</a>
-					</li>
-					
-				</ul>
-				<form class="form-inline my-2 my-md-0">
-					<input class="form-control" type="text" placeholder="Search">
-				</form>
-			</div>
-		</nav>
+	<jsp:include page="head/blog-head.jsp" flush="true"></jsp:include>
 
 		<div class="container" id="main-body">
 			<div class="row">
@@ -100,6 +66,12 @@
 									<span class="input-group-text">电话</span>
 								</div>
 								<input id="tel" type="text" class="form-control" value="${sessionScope.sess_user.uTel}">
+							</div>
+							<div class="input-group mb-3 mt-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text">金钱</span>
+								</div>
+								<input id="values" type="text" class="form-control" disabled="true" value="${sessionScope.sess_user.values}">
 							</div>
 							<div class="input-group mb-3 mt-3">
 								<div class="input-group-prepend">

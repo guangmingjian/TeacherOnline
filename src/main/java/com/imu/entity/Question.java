@@ -9,6 +9,7 @@ public class Question {
     String quContent;
     String quHtml;
     String quDate;
+    int quFfinishUId;
     User user;
     Category category;
 
@@ -23,9 +24,18 @@ public class Question {
                 ", quContent='" + quContent + '\'' +
                 ", quHtml='" + quHtml + '\'' +
                 ", quDate='" + quDate + '\'' +
+                ", quFfinishUId=" + quFfinishUId +
                 ", user=" + user +
                 ", category=" + category +
                 '}';
+    }
+
+    public int getQuFfinishUId() {
+        return quFfinishUId;
+    }
+
+    public void setQuFfinishUId(int quFfinishUId) {
+        this.quFfinishUId = quFfinishUId;
     }
 
     public User getUser() {
