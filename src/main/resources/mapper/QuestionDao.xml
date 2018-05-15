@@ -68,4 +68,12 @@
         qu_finishUId = #{reId}
         where qu_id = #{quId}
     </update>
+    <select id="searchQuestion" resultMap="questionResult">
+        select a.*,b.cata_name,c.u_name
+        from questions a ,Category b,user c
+        WHERE a.ca_id = b.cata_id
+        AND a.u_id = c.u_id AND
+        qu_title like CONCAT('%', #{label}, '%')
+        order BY  a.qu_id DESC;
+    </select>
 </mapper>

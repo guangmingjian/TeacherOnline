@@ -59,4 +59,8 @@ public class QuestionSerIpl implements QuestionService {
         return true;
     }
 
+    public List<Question> queryQuestions(String label) {
+        return questionDao.searchQuestion(label);
+    }
+
 }

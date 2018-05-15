@@ -3,6 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 使用MyBatis的API方式进行实现 -->
 <mapper namespace="com.imu.dao.UserDao">
+    <select id="queryAll" resultType="User">
+        SELECT *FROM user ;
+    </select>
     <select id="getUserById" resultType="User">
         SELECT *FROM user WHERE  u_id=#{uId};
     </select>
@@ -32,4 +35,7 @@
         user.values = #{value}
         where u_id = #{id}
     </update>
+    <delete id="delete">
+        DELETE FROM user WHERE u_id = #{uId}
+    </delete>
 </mapper>

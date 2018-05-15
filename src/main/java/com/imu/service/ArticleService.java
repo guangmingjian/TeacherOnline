@@ -11,4 +11,5 @@ public interface ArticleService {
     public Article queryArticleByID(String id);
     public List<Article> queAllArtByUID(String uId);
     public List<Article> queFiledArticles(String caId);
+    public List<Article> searchArticles(String label);
 }

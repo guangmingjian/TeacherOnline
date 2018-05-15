@@ -43,9 +43,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/wri-blog">写博客</a>
             </li>
-            <%--<li class="nav-item">--%>
-                <%--<a class="nav-link " href="#">查看博客</a>--%>
-            <%--</li>--%>
+            <li class="nav-item">
+                <a class="nav-link " href="/searchArticle">查找博客</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link " href="/ques-index">提问</a>
             </li>

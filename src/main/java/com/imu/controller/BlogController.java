@@ -1,6 +1,7 @@
 package com.imu.controller;
 
 import com.imu.dao.CategoryDao;
+import com.imu.entity.Article;
 import com.imu.entity.Category;
 import com.imu.entity.User;
 import com.imu.service.ArticleService;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 public class BlogController {
@@ -52,6 +54,21 @@ public class BlogController {
         modelMap.addAttribute("myArticles", articleService.queAllArtByUID(user.getuId()));
         return "blog/my_blogs";
     }
+    //返回查找博客页面
+    @RequestMapping(value = "/searchArticle",method = RequestMethod.GET)
+    public  String searchArticle(ModelMap modelMap){
 
+        return "blog/search_article";
+    }
+    //查找博客
+    @RequestMapping(value = "/searchArt",method = RequestMethod.POST)
+    public  String searchArticle(String content,ModelMap modelMap){
+        System.out.println("***********content:"+content);
+        if(content!=null||content!=""){
+        List<Article> articles = articleService.searchArticles(content);
+        modelMap.addAttribute("articles",articles);
+        }
+        return "blog/search_article";
+    }
 
 }

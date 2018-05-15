@@ -1,6 +1,7 @@
 package com.imu.controller;
 
 import com.imu.dao.CategoryDao;
+import com.imu.entity.Article;
 import com.imu.entity.Category;
 import com.imu.entity.Question;
 import com.imu.entity.User;
@@ -127,5 +128,15 @@ public class QuestionController {
             return "/ques-details?queId"+quId;
 
         }
+    }
+    //问题清单
+    @RequestMapping(value = "/searchQuestion",method = RequestMethod.GET)
+    public String searchQuestion(ModelMap modelMap,String content){
+        System.out.println("***********content:"+content);
+        if(content!=null||content!=""){
+            List<Question> questions = questionService.queryQuestions(content);
+            modelMap.addAttribute("questions",questions);
+        }
+        return "question/search_questions";
     }
 }

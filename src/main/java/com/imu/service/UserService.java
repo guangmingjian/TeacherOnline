@@ -2,6 +2,8 @@ package com.imu.service;
 
 import com.imu.entity.User;
 
+import java.util.List;
+
 public interface UserService {
     public User getUserById(String id);
     /**
@@ -14,4 +16,6 @@ public interface UserService {
     public User isEmail(String email);
     public boolean doReg(User user);
     public boolean updateUser(String id, User user);
+    public List<User> allUser();
+    public boolean delete(String id);
 }

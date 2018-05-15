@@ -23,7 +23,7 @@ public class LoginFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpSession session = httpRequest.getSession();
         // 登陆url
-        String loginUrl = httpRequest.getContextPath() + "/index";
+        String loginUrl = httpRequest.getContextPath() + "/login";
         String url = httpRequest.getRequestURI().toString();
 
         /*
@@ -83,6 +83,7 @@ public class LoginFilter implements Filter {
         pattenURL.add("static");//静态资源
         pattenURL.add("css");//css
         pattenURL.add("image");//image
+
 //        pattenURL.add("js");//js
 //        pattenURL.add("fonts");//fonts
 //        pattenURL.add("png");

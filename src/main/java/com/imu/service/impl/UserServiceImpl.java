@@ -7,6 +7,7 @@ import com.imu.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -33,6 +34,16 @@ public class UserServiceImpl implements UserService{
 
     public boolean updateUser(String id, User user) {
         return userDao.updateUser(id,user);
+    }
+
+    public List<User> allUser() {
+        return userDao.queryAll();
+    }
+
+    public boolean delete(String id) {
+        if(userDao.delete(id)>0)
+            return true;
+        return false;
     }
 
 }

@@ -21,8 +21,13 @@
 
 <body>
 
+<a href="#">
+    <span class="glyphicon glyphicon-folder-open"></span>
+</a>
+<header class="main-header"></header>
+
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="padding-left: 50px;">
-    <a class="navbar-brand" href="/ques-index">问答专栏</a>
+    <a class="navbar-brand" href="#">博客专栏</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,25 +35,17 @@
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/index">主页 <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">用户管理 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/ques">提问</a>
-            </li>
-            <%--<li class="nav-item">--%>
-                <%--<a class="nav-link" href="#">回答</a>--%>
-            <%--</li>--%>
-            <li class="nav-item">
-                <a class="nav-link " href="/blog">写文章</a>
+                <a class="nav-link" href="#">文章管理</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/ques-list">所有问题</a>
+                <a class="nav-link" href="#">问题管理</a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="/searchQuestion">查询问题</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="/personal">个人中心</a>
+                <a class="nav-link " href="#">个人中心</a>
             </li>
             <!--<li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -64,6 +61,7 @@
         </form>
     </div>
 </nav>
+
 
 </body>
 

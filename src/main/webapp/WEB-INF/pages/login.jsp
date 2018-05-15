@@ -44,7 +44,7 @@
 			<br />
 			<div class="forgot login-footer">
 				<span style="font-family: '楷体';">无账号?
-                                 <a href="/reg">注册</a>
+                                 <a href="/reg">注册</a><a href="/admin">administator</a>
                             </span>
 			</div>
 			<p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>

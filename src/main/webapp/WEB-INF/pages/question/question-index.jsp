@@ -47,14 +47,14 @@
 									<img src="static/images/icons/medicines.png" />
 								</div>
 
-								<a href="quesFieldList?caId=6">医学</a>
+								<a href="quesFieldList?caId=7">医学</a>
 							</div>
 							<div class="col">
 								<div class='radius'>
 									<img src="static/images/icons/financial_servicess.png" />
 								</div>
 
-								<a href="quesFieldList?caId=7">理财</a>
+								<a href="quesFieldList?caId=8">理财</a>
 							</div>
 
 							<div class="col">
@@ -62,7 +62,7 @@
 									<img src="static/images/icons/insurance.png" />
 								</div>
 
-								<a href="quesFieldList?caId=8">保险</a>
+								<a href="quesFieldList?caId=6">保险</a>
 							</div>
 							<div class="col">
 								<div class='radius' style="color: #2b8ff7; font-size: 18px;">

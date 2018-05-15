@@ -49,4 +49,15 @@ public class ArticleDaoTest {
             System.out.println(article.getUser().toString());
         }
     }
+
+    @Test
+    public void queryByTitle() {
+        List<Article> articles =   articleDao.queryByTitle("xml");
+        for (Article article: articles
+                ) {
+            System.out.println(article.getUser().toString());
+        }
+    }
+
+
 }

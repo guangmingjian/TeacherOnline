@@ -45,4 +45,9 @@ public  class ArticleServiceImpl implements ArticleService{
     public List<Article> queFiledArticles(String caId) {
         return articleDao.queryArticlesByCaId(caId);
     }
+
+    public List<Article> searchArticles(String label) {
+
+        return  articleDao.queryByTitle(label);
+    }
 }
