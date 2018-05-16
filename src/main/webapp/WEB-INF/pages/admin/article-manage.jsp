@@ -26,39 +26,37 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							用户管理
+							文章管理
 						</div>
 						<div class="card-body">
 							<table class="table table-striped table-hover ">
 								<thead>
 									<tr>
 										<th>序号</th>
-										<th>邮箱</th>
-										<th>密码</th>
-										<th>姓名</th>
-										<th>年龄</th>
-										<th>电话</th>
-										<th>个人领域</th>								
-										<th>修改</th>
+										<th>标题</th>
+										<th>作者</th>
+										<th>发布时间</th>
+										<th>查看</th>
 										<th>删除</th>
 									</tr>
 								</thead>
 								<tbody>
-                                <c:forEach items="${users}" var="user">
-                                    <tr>
-                                        <td >${user.uId}</td>
-                                        <td >${user.uEmail}</td>
-                                        <td >${user.uPassword}</td>
-                                        <td >${user.uName}</td>
-                                        <td >${user.uAge}</td>
-                                        <td >${user.uTel}</td>
-                                        <td >${user.field}</td>
-                                        <th > <a class="btn btn-success text-light" href="/adUpdateUser?uId=${user.uId}">修改</a></th>
-                                        <th > <a class="btn btn-danger text-light" href="/deleteUsers?uId=${user.uId}">删除</a></th>
-                                    </tr>
+                                <%
+                                    int counter = 0;
+                                %>
+                                <c:forEach items="${articles}" var="article">
+                                    <%
+                                        counter ++;
+                                    %>
+									<tr>
+										<td style="width: 10%;"><%=counter%></td>
+										<td style="width: 25%;">${article.artTitle}</td>
+										<td style="width: 18%;">${article.user.uName}</td>
+										<td style="width: 18%;">${article.artDate} </td>
+										<th style="width: 10%;"> <a href="/article-detail?id=${article.artId}" class="btn btn-success text-light">查看</a></th>
+										<th style="width: 10%;"> <a href="/doDeleteArt?id=${article.artId}" class="btn btn-danger text-light">删除</a></th>
+									</tr>
                                 </c:forEach>
-
-									
 								</tbody>
 							</table>
 						</div>
@@ -67,7 +65,9 @@
 			</div>
 		</div>
 		
-
+<script>
+	
+</script>
 		
 	</body>
 

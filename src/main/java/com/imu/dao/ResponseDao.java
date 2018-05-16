@@ -9,4 +9,5 @@ public interface ResponseDao {
     public List<Response> queryByQuId(@Param("quId") int quId);
     public boolean addResponse(Response response);
     public Response queryByReId(String reId);
+    public int delete(String id);
 }

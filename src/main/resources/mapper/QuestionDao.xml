@@ -76,4 +76,7 @@
         qu_title like CONCAT('%', #{label}, '%')
         order BY  a.qu_id DESC;
     </select>
+    <delete id="delete">
+        DELETE FROM questions WHERE qu_id=#{id};
+    </delete>
 </mapper>

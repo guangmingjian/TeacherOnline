@@ -13,4 +13,5 @@ public interface ArticleDao {
     public List<Article> queryArticleByUID(String uId);
     public List<Article> queryArticlesByCaId(String caId);
     public List<Article> queryByTitle(@Param("label") String label);
+    public int delete(String artId);
 }

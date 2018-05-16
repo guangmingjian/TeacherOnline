@@ -29,25 +29,25 @@
 
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li id="index" class="nav-item active">
                 <a class="nav-link" href="/index">主页 <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li id="ques" class="nav-item">
                 <a class="nav-link" href="/ques">提问</a>
             </li>
             <%--<li class="nav-item">--%>
                 <%--<a class="nav-link" href="#">回答</a>--%>
             <%--</li>--%>
-            <li class="nav-item">
+            <li id="blog" class="nav-item">
                 <a class="nav-link " href="/blog">写文章</a>
             </li>
-            <li class="nav-item">
+            <li id="ques-list" class="nav-item">
                 <a class="nav-link" href="/ques-list">所有问题</a>
             </li>
-            <li class="nav-item">
+            <li id="searchQuestion" class="nav-item">
                 <a class="nav-link" href="/searchQuestion">查询问题</a>
             </li>
-            <li class="nav-item">
+            <li id="personal" class="nav-item">
                 <a class="nav-link " href="/personal">个人中心</a>
             </li>
             <!--<li class="nav-item dropdown">
@@ -59,11 +59,24 @@
     </div>
   </li>-->
         </ul>
-        <form class="form-inline my-2 my-md-0">
-            <input class="form-control" type="text" placeholder="Search">
-        </form>
+
     </div>
 </nav>
+<script>
+    var href = location.href;
+    var id = href.substring(href.lastIndexOf("/") + 1, href.length);
+    if (id=="") {
+        id = "index";
+    }
+    var ids = ["index", "ques", "blog", "ques-list","searchQuestion", "personal"];
+    for (var i = 0; i < ids.length; i++) {
+        if (id == ids[i]) {
+            $("#" + id).attr("class", "active");
+        } else {
+            $("#" + ids[i]).removeAttr("class");
+        }
+    }
+</script>
 
 </body>
 

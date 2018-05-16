@@ -41,7 +41,7 @@ public class LoginFilter implements Filter {
          * 超时处理，ajax请求超时设置超时状态，页面请求超时则返回提示并重定向
          * session.getAttribute("")是获取到登录人的session信息
          * */
-        if (session.getAttribute("sess_user") == null) {
+        if (session.getAttribute("sess_user") == null&&session.getAttribute("admin")==null) {
             // 判断是否为ajax请求
             if (httpRequest.getHeader("x-requested-with") != null
                     && httpRequest.getHeader("x-requested-with").equalsIgnoreCase("XMLHttpRequest")) {
@@ -83,7 +83,8 @@ public class LoginFilter implements Filter {
         pattenURL.add("static");//静态资源
         pattenURL.add("css");//css
         pattenURL.add("image");//image
-
+        pattenURL.add("/adminlogin");//css
+        pattenURL.add("/doAdminLog");//image
 //        pattenURL.add("js");//js
 //        pattenURL.add("fonts");//fonts
 //        pattenURL.add("png");

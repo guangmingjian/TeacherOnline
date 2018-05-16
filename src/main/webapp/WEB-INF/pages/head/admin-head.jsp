@@ -34,18 +34,18 @@
 
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">用户管理 <span class="sr-only">(current)</span></a>
+            <li id="admin" class="nav-item active">
+                <a class="nav-link" href="/admin">用户管理 <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">文章管理</a>
+            <li  id="article-manager" class="nav-item">
+                <a class="nav-link" href="/article-manager">文章管理</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">问题管理</a>
+            <li  id="questionManager" class="nav-item">
+                <a class="nav-link" href="/questionManager">问题管理</a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link " href="#">个人中心</a>
+            <li  id="login" class="nav-item">
+                <a class="nav-link " href="/login">用户登录</a>
             </li>
             <!--<li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -61,7 +61,21 @@
         </form>
     </div>
 </nav>
-
+<script>
+    var href = location.href;
+    var id = href.substring(href.lastIndexOf("/") + 1, href.length);
+    if (id=="") {
+        id = "admin";
+    }
+    var ids = ["admin", "article-manager", "questionManager", "login"];
+    for (var i = 0; i < ids.length; i++) {
+        if (id == ids[i]) {
+            $("#" + id).attr("class", "active");
+        } else {
+            $("#" + ids[i]).removeAttr("class");
+        }
+    }
+</script>
 
 </body>
 

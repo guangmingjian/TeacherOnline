@@ -34,22 +34,22 @@
 
     <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li id="index" class="nav-item active">
                 <a class="nav-link" href="/index">主页 <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li id="myBlogs" class="nav-item">
                 <a class="nav-link" href="/myBlogs">我的博客</a>
             </li>
-            <li class="nav-item">
+            <li id="wri-blog" class="nav-item">
                 <a class="nav-link" href="/wri-blog">写博客</a>
             </li>
-            <li class="nav-item">
+            <li id="searchArticle" class="nav-item">
                 <a class="nav-link " href="/searchArticle">查找博客</a>
             </li>
-            <li class="nav-item">
+            <li id="ques-index" class="nav-item">
                 <a class="nav-link " href="/ques-index">提问</a>
             </li>
-            <li class="nav-item">
+            <li id="personal" class="nav-item">
                 <a class="nav-link " href="/personal">个人中心</a>
             </li>
             <!--<li class="nav-item dropdown">
@@ -66,7 +66,21 @@
         </form>
     </div>
 </nav>
-
+<script>
+    var href = location.href;
+    var id = href.substring(href.lastIndexOf("/") + 1, href.length);
+    if (id=="") {
+        id = "index";
+    }
+    var ids = ["index", "myBlogs", "wri-blog", "searchArticle","ques-index", "personal"];
+    for (var i = 0; i < ids.length; i++) {
+        if (id == ids[i]) {
+            $("#" + id).attr("class", "active");
+        } else {
+            $("#" + ids[i]).removeAttr("class");
+        }
+    }
+</script>
 
 </body>
 

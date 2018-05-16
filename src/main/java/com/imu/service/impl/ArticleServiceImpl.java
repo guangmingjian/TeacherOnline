@@ -50,4 +50,11 @@ public  class ArticleServiceImpl implements ArticleService{
 
         return  articleDao.queryByTitle(label);
     }
+
+    public boolean delete(String artId) {
+        if(articleDao.delete(artId)>0)
+            return true;
+        else
+            return false;
+    }
 }

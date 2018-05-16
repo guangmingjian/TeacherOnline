@@ -26,35 +26,33 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							用户管理
+							问题管理
 						</div>
 						<div class="card-body">
 							<table class="table table-striped table-hover ">
 								<thead>
 									<tr>
 										<th>序号</th>
-										<th>邮箱</th>
-										<th>密码</th>
-										<th>姓名</th>
-										<th>年龄</th>
-										<th>电话</th>
-										<th>个人领域</th>								
-										<th>修改</th>
+										<th>标题</th>
+										<th>作者</th>
+										<th>分类</th>
+										<th>价格</th>
+
+										<th>查看</th>
 										<th>删除</th>
 									</tr>
 								</thead>
 								<tbody>
-                                <c:forEach items="${users}" var="user">
+                                <c:forEach items="${questions}" var="question">
                                     <tr>
-                                        <td >${user.uId}</td>
-                                        <td >${user.uEmail}</td>
-                                        <td >${user.uPassword}</td>
-                                        <td >${user.uName}</td>
-                                        <td >${user.uAge}</td>
-                                        <td >${user.uTel}</td>
-                                        <td >${user.field}</td>
-                                        <th > <a class="btn btn-success text-light" href="/adUpdateUser?uId=${user.uId}">修改</a></th>
-                                        <th > <a class="btn btn-danger text-light" href="/deleteUsers?uId=${user.uId}">删除</a></th>
+                                        <td >${question.quId}</td>
+                                        <td >${question.quTitle}</td>
+                                        <td >${question.user.uName}</td>
+                                        <td >${question.category.cataName}</td>
+                                        <td >${question.quValues}</td>
+
+                                        <th > <a class="btn btn-success text-light" href="/quesDetail?queId=${question.quId}">查看</a></th>
+                                        <th > <a class="btn btn-danger text-light" href="/doDeleteQues?id=${question.quId}">删除</a></th>
                                     </tr>
                                 </c:forEach>
 

@@ -12,4 +12,5 @@ public interface QuestionService {
     public List<Question> fieldQuestion(String caid);
     public boolean adaptResponse(String queId,String reId);
     public List<Question> queryQuestions(String label);
+    public boolean deleteQuestion(String quId);
 }

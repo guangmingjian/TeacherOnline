@@ -63,4 +63,12 @@ public class QuestionSerIpl implements QuestionService {
         return questionDao.searchQuestion(label);
     }
 
+    public boolean deleteQuestion(String quId) {
+        if(questionDao.delete(quId)>0){
+            responseDao.delete(quId);
+            return true;
+        }
+        return false;
+    }
+
 }

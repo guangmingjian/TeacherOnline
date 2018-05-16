@@ -8,9 +8,7 @@
         insert into Article (art_cateid,u_id,art_title,art_content,art_html,art_summary,art_date)
         values (#{artCateid},#{uId},#{artTitle},#{artContent},#{artHtml},#{artSummary},#{artDate});
     </insert>
-    <select id="queryArticleByDesc" resultType="Article">
-        SELECT * FROM `article`  order by `art_id` desc;
-    </select>
+
     <resultMap id="articleResult" type="com.imu.entity.Article">
         <id property="artId" column="art_id" />
         <result property="artCateid" column="art_cateid"/>
@@ -29,7 +27,9 @@
             <result property="cataName" column="cata_name"/>
         </association>
     </resultMap>
-
+    <select id="queryArticleByDesc" resultType="Article">
+        SELECT * FROM `article`  order by `art_id` desc;
+    </select>
     <select id="queryDetilsAllArti" resultMap="articleResult">
         select a.*,b.cata_name,c.u_name
          from article a ,Category b,user c
@@ -68,4 +68,7 @@
         art_title like CONCAT('%', #{label}, '%')
         order BY  a.art_id DESC;
     </select>
+    <delete id="delete">
+        DELETE FROM article WHERE art_id=#{artId};
+    </delete>
 </mapper>

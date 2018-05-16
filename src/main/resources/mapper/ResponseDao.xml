@@ -44,5 +44,7 @@
         SELECT * FROM `response`
         WHERE re_id=#{reId};
     </select>
-
+    <delete id="delete">
+        DELETE FROM response WHERE qu_id=#{id};
+    </delete>
 </mapper>

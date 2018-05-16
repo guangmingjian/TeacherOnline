@@ -12,4 +12,5 @@ public interface ArticleService {
     public List<Article> queAllArtByUID(String uId);
     public List<Article> queFiledArticles(String caId);
     public List<Article> searchArticles(String label);
+    public boolean delete(String artId);
 }

@@ -17,17 +17,17 @@
 		<!-- Bootstrap core CSS -->
 
 		<!-- Custom styles for this template -->
-		<link href="static/css/signin.css" rel="stylesheet">
-		<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../static/css/signin.css" rel="stylesheet">
+		<link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
-        <script src="static/js/jquery-3.2.1.js" type="text/javascript"></script>
-        <script src="static/js/log.js" type="text/javascript"></script>
+        <script src="../static/js/jquery-3.2.1.js" type="text/javascript"></script>
+
 	</head>
 
 	<body class="text-center">
-		<form class="form-signin" action="/dolog" method="post">
+		<form class="form-signin" action="/doAdminLog" method="post">
 			<img class="mb-4" src="static/img/logo.png" alt="" width="72" height="72">
-			<h1 class="h3 mb-3 font-weight-normal">User please sign in</h1>
+			<h1 class="h3 mb-3 font-weight-normal">Admin please sign in</h1>
 			<label for="inputEmail" class="sr-only">Email address</label>
 			<input  type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
 			<div id="input-tip" class=".text-danger">
@@ -36,17 +36,11 @@
 			<label for="inputPassword" class="sr-only">Password</label>
 			<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
 			<div class="checkbox mb-3">
-				<label>
-          <input type="checkbox" value="记住"> Remember me
-        </label>
+
 			</div>
-			<button id="sub" class="disabled btn btn-lg btn-primary btn-block" type="submit">登录</button>
+			<button  class="disabled btn btn-lg btn-primary btn-block" type="submit">登录</button>
 			<br />
-			<div class="forgot login-footer">
-				<span style="font-family: '楷体';">无账号?
-                                 <a href="/reg">注册</a><a href="/adminlogin">administator</a>
-                            </span>
-			</div>
+
 			<p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
 		</form>
 	</body>

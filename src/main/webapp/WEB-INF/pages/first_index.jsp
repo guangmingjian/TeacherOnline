@@ -85,7 +85,7 @@ String contextPath = request.getContextPath();
 								<h1>历史问答</h1>
 								<p>对用户问的问题进行归类，便于在相同或者相似的问题中获得灵感启发</p>
 								<p>
-									<a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a>
+									<a class="btn btn-lg btn-primary" href="/ques-index" role="button">Learn more</a>
 								</p>
 							</div>
 						</div>
@@ -98,7 +98,7 @@ String contextPath = request.getContextPath();
 								<h1>问题发布</h1>
 								<p>当您遇到了难以解决的问题时，可以发布悬赏，我们将您的信息第一时间公布出去。当有人有办法解决并提交了相应答案，您可以视情节予以采纳</p>
 								<p>
-									<a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a>
+									<a class="btn btn-lg btn-primary" href="/blog" role="button">Learn more</a>
 								</p>
 							</div>
 						</div>

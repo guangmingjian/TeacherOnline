@@ -13,4 +13,5 @@ public interface QuestionDao {
     public List<Question> queryByCaID(String caid);
     public int updateQuestionFin(@Param("reId")int reId,@Param("quId")int quId);
     public List<Question> searchQuestion(@Param("label") String label);
+    public int delete(String id);
 }
